@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="noble-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b" />
+      <stop offset="50%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#050505" />
+    </linearGradient>
+    <linearGradient id="gold-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#noble-bg)" />
+
+  <!-- Grid -->
+  <g stroke="#27272a" stroke-width="0.7" opacity="0.4">
+    <line x1="0" y1="75" x2="800" y2="75" />
+    <line x1="0" y1="150" x2="800" y2="150" />
+    <line x1="0" y1="225" x2="800" y2="225" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="375" x2="800" y2="375" />
+  </g>
+
+  <!-- Browser Frame -->
+  <rect x="30" y="20" width="740" height="410" rx="10" fill="#121215" stroke="#27272a" stroke-width="1.5" />
+  
+  <!-- Browser top chrome -->
+  <rect x="30" y="20" width="740" height="36" rx="10" fill="#1c1c21" />
+  <circle cx="50" cy="38" r="4.5" fill="#ef4444" />
+  <circle cx="66" cy="38" r="4.5" fill="#eab308" />
+  <circle cx="82" cy="38" r="4.5" fill="#22c55e" />
+
+  <!-- URL bar -->
+  <rect x="110" y="26" width="320" height="24" rx="6" fill="#27272a" />
+  <text x="122" y="42" fill="#a1a1aa" font-family="sans-serif" font-size="10.5">https://nobleplatforms.com</text>
+
+  <!-- Live Status -->
+  <rect x="615" y="26" width="135" height="24" rx="12" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="0.8" />
+  <circle cx="630" cy="38" r="3.5" fill="#10b981" />
+  <text x="642" y="42" fill="#6ee7b7" font-family="sans-serif" font-size="9.5" font-weight="800">100 LIGHTHOUSE</text>
+
+  <!-- Website Hero Content -->
+  <g transform="translate(50, 75)">
+    <rect x="0" y="0" width="700" height="160" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1" />
+
+    <!-- Agency Brand -->
+    <rect x="30" y="25" width="28" height="28" rx="6" fill="#f59e0b" />
+    <text x="44" y="45" fill="#000000" font-family="sans-serif" font-size="15" font-weight="900" text-anchor="middle">N</text>
+    <text x="68" y="44" fill="#ffffff" font-family="sans-serif" font-size="15" font-weight="800" letter-spacing="1">NOBLE PLATFORMS</text>
+    
+    <text x="30" y="90" fill="#ffffff" font-family="sans-serif" font-size="24" font-weight="900">Architecting Next-Gen Enterprise AI</text>
+    <text x="30" y="116" fill="#d4d4d8" font-family="sans-serif" font-size="13">High-performance digital platforms, intelligent workflow automations, and bespoke AI engineering.</text>
+
+    <!-- CTAs -->
+    <rect x="30" y="128" width="120" height="24" rx="4" fill="#ffffff" />
+    <text x="90" y="144" fill="#000000" font-family="sans-serif" font-size="9.5" font-weight="800" text-anchor="middle">Explore Services &#8594;</text>
+
+    <rect x="160" y="128" width="120" height="24" rx="4" fill="#27272a" stroke="#3f3f46" stroke-width="1" />
+    <text x="220" y="144" fill="#e4e4e7" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">Client Case Studies</text>
+  </g>
+
+  <!-- 3 Bento Feature Cards -->
+  <g transform="translate(50, 252)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="220" height="155" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1" />
+    <rect x="16" y="16" width="32" height="32" rx="6" fill="#3b82f6" fill-opacity="0.2" />
+    <text x="32" y="37" fill="#60a5fa" font-family="sans-serif" font-size="14" font-weight="800" text-anchor="middle">AI</text>
+    <text x="16" y="72" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="800">AI Solutions</text>
+    <text x="16" y="90" fill="#a1a1aa" font-family="sans-serif" font-size="9.5">LLM fine-tuning, RAG agents, and automated workflows.</text>
+    <text x="16" y="135" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="700">Read Architecture &#8594;</text>
+
+    <!-- Card 2 -->
+    <rect x="240" y="0" width="220" height="155" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1" />
+    <rect x="256" y="16" width="32" height="32" rx="6" fill="#10b981" fill-opacity="0.2" />
+    <text x="272" y="37" fill="#34d399" font-family="sans-serif" font-size="14" font-weight="800" text-anchor="middle">CL</text>
+    <text x="256" y="72" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="800">Cloud Architecture</text>
+    <text x="256" y="90" fill="#a1a1aa" font-family="sans-serif" font-size="9.5">Microservices, serverless APIs, and real-time data sync.</text>
+    <text x="256" y="135" fill="#10b981" font-family="sans-serif" font-size="10" font-weight="700">Explore Systems &#8594;</text>
+
+    <!-- Card 3 -->
+    <rect x="480" y="0" width="220" height="155" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1" />
+    <rect x="496" y="16" width="32" height="32" rx="6" fill="#f59e0b" fill-opacity="0.2" />
+    <text x="512" y="37" fill="#fbbf24" font-family="sans-serif" font-size="14" font-weight="800" text-anchor="middle">UX</text>
+    <text x="496" y="72" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="800">Performance SEO</text>
+    <text x="496" y="90" fill="#a1a1aa" font-family="sans-serif" font-size="9.5">Sub-second load times, semantic HTML, and accessibility.</text>
+    <text x="496" y="135" fill="#f59e0b" font-family="sans-serif" font-size="10" font-weight="700">View Metrics &#8594;</text>
+  </g>
+</svg>

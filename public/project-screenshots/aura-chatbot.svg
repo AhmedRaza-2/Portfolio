@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aura-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0c1d" />
+      <stop offset="50%" stop-color="#16122d" />
+      <stop offset="100%" stop-color="#080614" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#aura-bg)" />
+
+  <!-- Header -->
+  <rect x="25" y="16" width="750" height="46" rx="8" fill="#1b1633" stroke="#312659" stroke-width="1.2" />
+  <rect x="38" y="26" width="26" height="26" rx="6" fill="#8b5cf6" />
+  <circle cx="51" cy="39" r="6" fill="#ffffff" />
+  <text x="74" y="37" fill="#f5f3ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" letter-spacing="0.4">AURA AI // ZERO-CONFIG URL-TO-CHATBOT AGENT</text>
+  <text x="74" y="51" fill="#a78bfa" font-family="sans-serif" font-size="9.5">RAG Architecture &#8226; Vector Embeddings &#8226; Flask API &#8226; Instant Website Widget Embed</text>
+
+  <rect x="635" y="26" width="125" height="26" rx="13" fill="#8b5cf6" fill-opacity="0.2" stroke="#a78bfa" stroke-width="1" />
+  <circle cx="650" cy="39" r="4" fill="#a78bfa" />
+  <text x="662" y="43" fill="#c4b5fd" font-family="sans-serif" font-size="10" font-weight="800">RAG ACTIVE</text>
+
+  <!-- Left: Crawl & Vector Ingestion -->
+  <g transform="translate(25, 74)">
+    <rect width="420" height="350" rx="10" fill="#130e26" stroke="#2a1e4a" stroke-width="1.2" />
+    
+    <text x="20" y="32" fill="#f5f3ff" font-family="sans-serif" font-size="12" font-weight="700">WEBSITE INGESTION &amp; EMBEDDING</text>
+    
+    <!-- URL Input Bar -->
+    <rect x="20" y="46" width="380" height="40" rx="6" fill="#1e153b" stroke="#3b2a68" stroke-width="1" />
+    <text x="32" y="70" fill="#a78bfa" font-family="sans-serif" font-size="10.5">https://client-business.com/docs</text>
+    <rect x="310" y="52" width="82" height="28" rx="4" fill="#7c3aed" />
+    <text x="351" y="70" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="800" text-anchor="middle">Sync URL</text>
+
+    <!-- Crawl Progress -->
+    <g transform="translate(20, 102)">
+      <rect width="380" height="46" rx="6" fill="#1e153b" />
+      <text x="16" y="20" fill="#cbd5e1" font-family="sans-serif" font-size="10" font-weight="700">Crawled 48 pages &#8226; 2,410 chunks vectorized</text>
+      <rect x="16" y="28" width="348" height="6" rx="3" fill="#2e1f57" />
+      <rect x="16" y="28" width="348" height="6" rx="3" fill="#10b981" />
+    </g>
+
+    <!-- Knowledge Base Embeddings Preview -->
+    <g transform="translate(20, 162)">
+      <text x="0" y="16" fill="#c4b5fd" font-family="sans-serif" font-size="10" font-weight="700">SEMANTIC VECTOR RETRIEVAL</text>
+
+      <rect x="0" y="26" width="380" height="36" rx="4" fill="#1e153b" stroke="#3b2a68" stroke-width="0.8" />
+      <text x="14" y="42" fill="#38bdf8" font-family="Courier, monospace" font-size="9" font-weight="700">chunk_id #1042 &#8226; cosine_similarity: 0.94</text>
+      <text x="14" y="55" fill="#94a3b8" font-family="sans-serif" font-size="8.5">"Standard tier offers up to 5 concurrent API integrations with 99.9% uptime..."</text>
+
+      <rect x="0" y="70" width="380" height="36" rx="4" fill="#1e153b" stroke="#3b2a68" stroke-width="0.8" />
+      <text x="14" y="86" fill="#38bdf8" font-family="Courier, monospace" font-size="9" font-weight="700">chunk_id #0918 &#8226; cosine_similarity: 0.89</text>
+      <text x="14" y="99" fill="#94a3b8" font-family="sans-serif" font-size="8.5">"Refund policy covers 30 days from billing date for enterprise annual seats..."</text>
+    </g>
+
+    <!-- Embed Snippet -->
+    <g transform="translate(20, 280)">
+      <rect width="380" height="52" rx="6" fill="#0d081f" stroke="#4c1d95" stroke-width="1" />
+      <text x="14" y="20" fill="#a78bfa" font-family="sans-serif" font-size="9.5" font-weight="700">ONE-LINE CLIENT INTEGRATION SCRIPT</text>
+      <text x="14" y="38" fill="#f5f3ff" font-family="Courier, monospace" font-size="9">&lt;script src="https://aura-ai.inara/widget.js" data-agent="inara-82"&gt;&lt;/script&gt;</text>
+    </g>
+  </g>
+
+  <!-- Right: Live Chat Widget Mockup -->
+  <g transform="translate(465, 74)">
+    <rect width="310" height="350" rx="10" fill="#130e26" stroke="#2a1e4a" stroke-width="1.2" />
+
+    <!-- Chat Header -->
+    <rect x="16" y="16" width="278" height="44" rx="8" fill="#1e153b" stroke="#3b2a68" stroke-width="1" />
+    <circle cx="36" cy="38" r="12" fill="#8b5cf6" />
+    <text x="36" y="42" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="800" text-anchor="middle">A</text>
+    <text x="56" y="34" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="700">Aura Assistant</text>
+    <text x="56" y="47" fill="#34d399" font-family="sans-serif" font-size="8.5">Online &#8226; Answers in &lt; 800ms</text>
+
+    <!-- Messages -->
+    <g transform="translate(16, 75)">
+      <!-- User message -->
+      <rect x="58" y="0" width="220" height="34" rx="6" fill="#7c3aed" />
+      <text x="70" y="16" fill="#ffffff" font-family="sans-serif" font-size="9.5">How does enterprise billing work?</text>
+      <text x="70" y="27" fill="#ddd6fe" font-family="sans-serif" font-size="7.5">10:14 AM</text>
+
+      <!-- Bot message with source citation -->
+      <rect x="0" y="46" width="260" height="78" rx="6" fill="#1e153b" stroke="#3b2a68" stroke-width="0.8" />
+      <text x="12" y="64" fill="#f5f3ff" font-family="sans-serif" font-size="9">Enterprise plans are invoiced annually and</text>
+      <text x="12" y="78" fill="#f5f3ff" font-family="sans-serif" font-size="9">include dedicated support with SLA guarantees.</text>
+      <text x="12" y="92" fill="#f5f3ff" font-family="sans-serif" font-size="9">Up to 5 custom integrations are included.</text>
+      
+      <rect x="12" y="98" width="130" height="18" rx="3" fill="#2e1f57" />
+      <text x="77" y="111" fill="#a78bfa" font-family="sans-serif" font-size="7.5" text-anchor="middle">Source: Pricing Doc (Page 4)</text>
+
+      <!-- User message 2 -->
+      <rect x="78" y="136" width="200" height="30" rx="6" fill="#7c3aed" />
+      <text x="90" y="152" fill="#ffffff" font-family="sans-serif" font-size="9.5">Can I trial the API first?</text>
+
+      <!-- Bot message 2 -->
+      <rect x="0" y="178" width="260" height="44" rx="6" fill="#1e153b" stroke="#3b2a68" stroke-width="0.8" />
+      <text x="12" y="196" fill="#f5f3ff" font-family="sans-serif" font-size="9">Yes! A 14-day free developer trial is</text>
+      <text x="12" y="210" fill="#f5f3ff" font-family="sans-serif" font-size="9">available with full sandbox features.</text>
+    </g>
+
+    <!-- Chat Input Field -->
+    <rect x="16" y="285" width="278" height="38" rx="6" fill="#1e153b" stroke="#3b2a68" stroke-width="1" />
+    <text x="28" y="308" fill="#64748b" font-family="sans-serif" font-size="9.5">Ask anything about products...</text>
+    <rect x="252" y="291" width="32" height="26" rx="4" fill="#8b5cf6" />
+    <text x="268" y="308" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="800" text-anchor="middle">&#8594;</text>
+  </g>
+</svg>

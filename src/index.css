@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #52ab98;
+  --color-primary-hover: #429382;
+  --color-primary-light: rgba(82, 171, 152, 0.16);
+  --color-primary-border: rgba(82, 171, 152, 0.35);
+  --color-accent: #52ab98;
+  --color-accent-glow: rgba(82, 171, 152, 0.25);
+  --color-page-bg: #0e1e24;
+  --color-subtle-bg: #142830;
+  --color-card-bg: #18333d;
+  --color-heading-text: #ffffff;
+  --color-body-text: #c8d8e4;
+  --color-border-subtle: #244450;
+  --color-gradient-from: #52ab98;
+  --color-gradient-to: #2b6777;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+  
+  body {
+    background-color: var(--color-page-bg);
+    color: var(--color-body-text);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: #0e1e24;
+  }
+}
+
+/* Modern subtle ambient dot background */
+.bg-ambient-grid {
+  background-image: radial-gradient(rgba(82, 171, 152, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphic frosted dock effects */
+.glass-dock {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+/* Infinite Horizontal Scroll Marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 38s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Custom subtle scrollbar matching active theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-subtle-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+

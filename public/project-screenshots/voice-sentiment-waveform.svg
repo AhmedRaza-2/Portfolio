@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="voice-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0518" />
+      <stop offset="50%" stop-color="#120c24" />
+      <stop offset="100%" stop-color="#05020c" />
+    </linearGradient>
+    <linearGradient id="wave-agent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="wave-angry" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+    <linearGradient id="glow-circle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="450" fill="url(#voice-bg)" />
+
+  <!-- Ambient audio glow -->
+  <circle cx="400" cy="225" r="220" fill="url(#glow-circle)" style="filter:blur(40px)" />
+
+  <!-- Grid lines -->
+  <g stroke="#2e1065" stroke-width="0.7" opacity="0.35">
+    <line x1="0" y1="70" x2="800" y2="70" />
+    <line x1="0" y1="140" x2="800" y2="140" />
+    <line x1="0" y1="210" x2="800" y2="210" />
+    <line x1="0" y1="280" x2="800" y2="280" />
+    <line x1="0" y1="350" x2="800" y2="350" />
+  </g>
+
+  <!-- Top System Header Bar -->
+  <rect x="25" y="16" width="750" height="46" rx="8" fill="#18112c" stroke="#3b1d6d" stroke-width="1.2" />
+  
+  <!-- Audio Waveform / Mic Icon -->
+  <rect x="38" y="25" width="28" height="28" rx="6" fill="#8b5cf6" />
+  <!-- Sound wave symbol -->
+  <path d="M46 39 L46 40 M49 35 L49 43 M52 31 L52 47 M55 36 L55 42 M58 38 L58 40" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+
+  <text x="76" y="38" fill="#f5f3ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" letter-spacing="0.5">VOICE CALL SENTIMENT CLASSIFICATION &amp; AUDIO ANALYTICS</text>
+  <text x="76" y="52" fill="#a78bfa" font-family="sans-serif" font-size="9.5">Deep Audio Feature Extraction (MFCC, Pitch, Energy) &#8226; Askari Bank Call Quality</text>
+
+  <!-- Top Right Flag -->
+  <rect x="620" y="26" width="142" height="26" rx="13" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="1" />
+  <circle cx="634" cy="39" r="4" fill="#ef4444" />
+  <text x="646" y="43" fill="#fca5a5" font-family="sans-serif" font-size="10" font-weight="800">ANGRY CALL FLAGGED</text>
+
+  <!-- Left Side: Waveform & Equalizer Panel -->
+  <g transform="translate(25, 74)">
+    <rect width="490" height="350" rx="10" fill="#130d24" stroke="#2e1b4e" stroke-width="1.2" />
+
+    <!-- Waveform Title & Timestamp -->
+    <text x="20" y="28" fill="#e9d5ff" font-family="sans-serif" font-size="12" font-weight="700">STEREO AUDIO STREAM &amp; ACOUSTIC SPECTROGRAM</text>
+    <text x="470" y="28" fill="#a855f7" font-family="Courier, monospace" font-size="11" font-weight="700" text-anchor="end">REC-2026 // 03:42</text>
+
+    <!-- Channel 1: Customer (Angry Spike Detected) -->
+    <rect x="18" y="44" width="454" height="110" rx="8" fill="#1e1338" stroke="#3b1d6d" stroke-width="1" />
+    <text x="30" y="64" fill="#fca5a5" font-family="sans-serif" font-size="10" font-weight="800">CHANNEL A: CUSTOMER AUDIO (PITCH SPIKE: 480Hz)</text>
+    <rect x="360" y="52" width="102" height="18" rx="4" fill="#ef4444" fill-opacity="0.3" stroke="#ef4444" stroke-width="0.8" />
+    <text x="411" y="65" fill="#fca5a5" font-family="sans-serif" font-size="9" font-weight="700" text-anchor="middle">ESCALATION ALERT</text>
+
+    <!-- Center zero line -->
+    <line x1="28" y1="105" x2="462" y2="105" stroke="#4c1d95" stroke-width="0.8" stroke-dasharray="2 2" />
+
+    <!-- Customer Waveform (Dynamic angry oscillation) -->
+    <path d="M 28 105 
+             Q 45 90, 60 105 T 90 105 
+             Q 110 75, 125 105 T 150 105 
+             Q 175 40, 190 105 T 215 105 
+             Q 235 25, 250 105 T 275 105 
+             Q 295 18, 310 105 T 330 105
+             Q 350 35, 370 105 T 400 105
+             Q 425 80, 440 105 T 462 105"
+          fill="none" stroke="url(#wave-angry)" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Negative reflection for acoustic wave fullness -->
+    <path d="M 28 105 
+             Q 45 120, 60 105 T 90 105 
+             Q 110 135, 125 105 T 150 105 
+             Q 175 170, 190 105 T 215 105 
+             Q 235 185, 250 105 T 275 105 
+             Q 295 192, 310 105 T 330 105
+             Q 350 175, 370 105 T 400 105
+             Q 425 130, 440 105 T 462 105"
+          fill="none" stroke="url(#wave-angry)" stroke-width="1.8" stroke-linecap="round" opacity="0.6" />
+
+    <!-- Escalation Bounding Box -->
+    <rect x="220" y="48" width="105" height="102" rx="4" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 2" />
+    <text x="272" y="145" fill="#f87171" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">ANGRY INTERVAL (t=1.4s)</text>
+
+    <!-- Channel 2: Support Agent (Calm / Balanced) -->
+    <rect x="18" y="166" width="454" height="96" rx="8" fill="#1e1338" stroke="#3b1d6d" stroke-width="1" />
+    <text x="30" y="184" fill="#86efac" font-family="sans-serif" font-size="10" font-weight="800">CHANNEL B: AGENT AUDIO (CALM &amp; DE-ESCALATING)</text>
+    <rect x="375" y="174" width="87" height="18" rx="4" fill="#10b981" fill-opacity="0.25" stroke="#10b981" stroke-width="0.8" />
+    <text x="418" y="187" fill="#86efac" font-family="sans-serif" font-size="9" font-weight="700" text-anchor="middle">PROFESSIONAL</text>
+
+    <line x1="28" y1="218" x2="462" y2="218" stroke="#4c1d95" stroke-width="0.8" stroke-dasharray="2 2" />
+
+    <!-- Agent Waveform (Smooth harmonic curve) -->
+    <path d="M 28 218 
+             Q 55 198, 80 218 T 130 218 
+             Q 160 195, 190 218 T 245 218 
+             Q 280 200, 315 218 T 370 218 
+             Q 410 202, 440 218 T 462 218"
+          fill="none" stroke="url(#wave-agent)" stroke-width="2.5" stroke-linecap="round" />
+
+    <path d="M 28 218 
+             Q 55 238, 80 218 T 130 218 
+             Q 160 241, 190 218 T 245 218 
+             Q 280 236, 315 218 T 370 218 
+             Q 410 234, 440 218 T 462 218"
+          fill="none" stroke="url(#wave-agent)" stroke-width="1.8" stroke-linecap="round" opacity="0.6" />
+
+    <!-- Bottom Audio Frequency Bars / Equalizer (30 bars) -->
+    <g transform="translate(18, 274)">
+      <rect width="454" height="64" rx="6" fill="#190e2f" stroke="#2e1b4e" stroke-width="0.8" />
+      <text x="12" y="18" fill="#c4b5fd" font-family="sans-serif" font-size="9" font-weight="700">REAL-TIME MFCC SPECTRUM ANALYSIS</text>
+      
+      <!-- Bars loop -->
+      <g transform="translate(12, 26)">
+        <rect x="0" y="16" width="9" height="18" rx="2" fill="#8b5cf6" />
+        <rect x="14" y="10" width="9" height="24" rx="2" fill="#8b5cf6" />
+        <rect x="28" y="6" width="9" height="28" rx="2" fill="#a855f7" />
+        <rect x="42" y="12" width="9" height="22" rx="2" fill="#a855f7" />
+        <rect x="56" y="4" width="9" height="30" rx="2" fill="#d946ef" />
+        <rect x="70" y="8" width="9" height="26" rx="2" fill="#d946ef" />
+        <rect x="84" y="14" width="9" height="20" rx="2" fill="#ec4899" />
+        <rect x="98" y="2" width="9" height="32" rx="2" fill="#f43f5e" />
+        <rect x="112" y="0" width="9" height="34" rx="2" fill="#ef4444" />
+        <rect x="126" y="3" width="9" height="31" rx="2" fill="#ef4444" />
+        <rect x="140" y="8" width="9" height="26" rx="2" fill="#f43f5e" />
+        <rect x="154" y="14" width="9" height="20" rx="2" fill="#ec4899" />
+        <rect x="168" y="6" width="9" height="28" rx="2" fill="#a855f7" />
+        <rect x="182" y="12" width="9" height="22" rx="2" fill="#8b5cf6" />
+        <rect x="196" y="18" width="9" height="16" rx="2" fill="#6366f1" />
+        <rect x="210" y="10" width="9" height="24" rx="2" fill="#3b82f6" />
+        <rect x="224" y="4" width="9" height="30" rx="2" fill="#06b6d4" />
+        <rect x="238" y="2" width="9" height="32" rx="2" fill="#10b981" />
+        <rect x="252" y="8" width="9" height="26" rx="2" fill="#10b981" />
+        <rect x="266" y="14" width="9" height="20" rx="2" fill="#06b6d4" />
+        <rect x="280" y="6" width="9" height="28" rx="2" fill="#3b82f6" />
+        <rect x="294" y="12" width="9" height="22" rx="2" fill="#6366f1" />
+        <rect x="308" y="16" width="9" height="18" rx="2" fill="#8b5cf6" />
+        <rect x="322" y="4" width="9" height="30" rx="2" fill="#a855f7" />
+        <rect x="336" y="0" width="9" height="34" rx="2" fill="#ef4444" />
+        <rect x="350" y="6" width="9" height="28" rx="2" fill="#f43f5e" />
+        <rect x="364" y="12" width="9" height="22" rx="2" fill="#d946ef" />
+        <rect x="378" y="18" width="9" height="16" rx="2" fill="#8b5cf6" />
+        <rect x="392" y="10" width="9" height="24" rx="2" fill="#6366f1" />
+        <rect x="406" y="14" width="9" height="20" rx="2" fill="#3b82f6" />
+        <rect x="420" y="20" width="9" height="14" rx="2" fill="#38bdf8" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Right Side: Classification Results Card -->
+  <g transform="translate(530, 74)">
+    <rect width="245" height="350" rx="10" fill="#130d24" stroke="#2e1b4e" stroke-width="1.2" />
+
+    <!-- Card Title -->
+    <rect x="16" y="16" width="213" height="32" rx="6" fill="#1e1338" />
+    <text x="122" y="36" fill="#f5f3ff" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">ML CLASSIFIER INFERENCE</text>
+
+    <!-- Sentiment Meter 1: Angry (Red) -->
+    <g transform="translate(16, 60)">
+      <text x="0" y="12" fill="#f87171" font-family="sans-serif" font-size="10" font-weight="700">Angry / Frustrated</text>
+      <text x="213" y="12" fill="#ef4444" font-family="Courier, monospace" font-size="11" font-weight="700" text-anchor="end">94.8%</text>
+      <rect x="0" y="18" width="213" height="8" rx="4" fill="#2d1538" />
+      <rect x="0" y="18" width="202" height="8" rx="4" fill="#ef4444" />
+    </g>
+
+    <!-- Sentiment Meter 2: Neutral (Gray) -->
+    <g transform="translate(16, 102)">
+      <text x="0" y="12" fill="#cbd5e1" font-family="sans-serif" font-size="10" font-weight="600">Neutral / Informational</text>
+      <text x="213" y="12" fill="#94a3b8" font-family="Courier, monospace" font-size="11" font-weight="700" text-anchor="end">4.1%</text>
+      <rect x="0" y="18" width="213" height="8" rx="4" fill="#2d1538" />
+      <rect x="0" y="18" width="9" height="8" rx="4" fill="#94a3b8" />
+    </g>
+
+    <!-- Sentiment Meter 3: Satisfied (Green) -->
+    <g transform="translate(16, 144)">
+      <text x="0" y="12" fill="#86efac" font-family="sans-serif" font-size="10" font-weight="600">Satisfied / Positive</text>
+      <text x="213" y="12" fill="#10b981" font-family="Courier, monospace" font-size="11" font-weight="700" text-anchor="end">1.1%</text>
+      <rect x="0" y="18" width="213" height="8" rx="4" fill="#2d1538" />
+      <rect x="0" y="18" width="3" height="8" rx="4" fill="#10b981" />
+    </g>
+
+    <!-- Call Quality Score Badge -->
+    <g transform="translate(16, 192)">
+      <rect width="213" height="52" rx="8" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="1" />
+      <text x="14" y="22" fill="#fca5a5" font-family="sans-serif" font-size="9.5" font-weight="700">CALL QUALITY AUDIT SCORE</text>
+      <text x="14" y="42" fill="#ffffff" font-family="sans-serif" font-size="18" font-weight="900">42 / 100</text>
+      <text x="100" y="42" fill="#ef4444" font-family="sans-serif" font-size="10" font-weight="700">Needs Review</text>
+    </g>
+
+    <!-- Dispatch Action -->
+    <g transform="translate(16, 256)">
+      <rect width="213" height="74" rx="8" fill="#1e1338" stroke="#3b1d6d" stroke-width="1" />
+      <text x="14" y="20" fill="#c4b5fd" font-family="sans-serif" font-size="9.5" font-weight="700">SUPERVISOR DISPATCH</text>
+      <text x="14" y="36" fill="#e9d5ff" font-family="sans-serif" font-size="9">Automated CRM ticket created.</text>
+      <text x="14" y="50" fill="#e9d5ff" font-family="sans-serif" font-size="9">Customer retention alert sent to branch.</text>
+      <rect x="14" y="56" width="185" height="12" rx="3" fill="#8b5cf6" fill-opacity="0.2" />
+      <text x="106" y="65" fill="#c4b5fd" font-family="sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">ROUTED TO ASKARI QUALITY ASSURANCE</text>
+    </g>
+  </g>
+</svg>

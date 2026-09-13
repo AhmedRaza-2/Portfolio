@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="reg-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050811" />
+      <stop offset="50%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="chart-area" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="blue-area" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#reg-bg)" />
+
+  <!-- Grid overlay -->
+  <g stroke="#1e293b" stroke-width="0.7" opacity="0.35">
+    <line x1="0" y1="60" x2="800" y2="60" />
+    <line x1="0" y1="120" x2="800" y2="120" />
+    <line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="240" x2="800" y2="240" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="0" y1="420" x2="800" y2="420" />
+  </g>
+
+  <!-- Top Executive Header -->
+  <rect x="25" y="16" width="750" height="48" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1.2" />
+  
+  <rect x="40" y="27" width="26" height="26" rx="6" fill="#059669" />
+  <path d="M47 40 L51 44 L59 34" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+  <text x="75" y="38" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" letter-spacing="0.4">ASKARI BANK // REGULATORY MONITORING AUTOMATION DASHBOARD</text>
+  <text x="75" y="52" fill="#94a3b8" font-family="sans-serif" font-size="9.5">State Bank of Pakistan &#8226; SECP &#8226; FATF &#8226; Global Banking Compliance Intelligence</text>
+
+  <!-- Top Right Pulse Status -->
+  <rect x="625" y="27" width="135" height="26" rx="13" fill="#059669" fill-opacity="0.15" stroke="#10b981" stroke-width="1" />
+  <circle cx="640" cy="40" r="4" fill="#10b981" />
+  <circle cx="640" cy="40" r="7" fill="none" stroke="#10b981" opacity="0.6" />
+  <text x="653" y="44" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="700">80+ SCRAPERS ACTIVE</text>
+
+  <!-- 3 Executive Metric Cards -->
+  <!-- Metric 1 -->
+  <g transform="translate(25, 76)">
+    <rect width="236" height="82" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <text x="18" y="26" fill="#94a3b8" font-family="sans-serif" font-size="10" font-weight="700" letter-spacing="0.5">PORTALS MONITORED</text>
+    <text x="18" y="58" fill="#38bdf8" font-family="sans-serif" font-size="26" font-weight="900">80–100+</text>
+    <text x="140" y="58" fill="#0ea5e9" font-family="sans-serif" font-size="11" font-weight="600">Daily Automated</text>
+    <rect x="18" y="68" width="200" height="3" rx="1.5" fill="#1e293b" />
+    <rect x="18" y="68" width="180" height="3" rx="1.5" fill="#0284c7" />
+  </g>
+
+  <!-- Metric 2 -->
+  <g transform="translate(282, 76)">
+    <rect width="236" height="82" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <text x="18" y="26" fill="#94a3b8" font-family="sans-serif" font-size="10" font-weight="700" letter-spacing="0.5">DOCUMENTS PROCESSED</text>
+    <text x="18" y="58" fill="#34d399" font-family="sans-serif" font-size="26" font-weight="900">50,000+</text>
+    <text x="148" y="58" fill="#10b981" font-family="sans-serif" font-size="11" font-weight="600">Cataloged &amp; OCR</text>
+    <rect x="18" y="68" width="200" height="3" rx="1.5" fill="#1e293b" />
+    <rect x="18" y="68" width="190" height="3" rx="1.5" fill="#10b981" />
+  </g>
+
+  <!-- Metric 3 -->
+  <g transform="translate(539, 76)">
+    <rect width="236" height="82" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <text x="18" y="26" fill="#94a3b8" font-family="sans-serif" font-size="10" font-weight="700" letter-spacing="0.5">WORKFLOW ACCELERATION</text>
+    <text x="18" y="58" fill="#f59e0b" font-family="sans-serif" font-size="22" font-weight="900">32h &#8594; 10 mins</text>
+    <text x="156" y="58" fill="#fbbf24" font-family="sans-serif" font-size="11" font-weight="700">99.4% Faster</text>
+    <rect x="18" y="68" width="200" height="3" rx="1.5" fill="#1e293b" />
+    <rect x="18" y="68" width="195" height="3" rx="1.5" fill="#f59e0b" />
+  </g>
+
+  <!-- Left Main Area: Scrape & Extraction Analytics Chart -->
+  <g transform="translate(25, 172)">
+    <rect width="460" height="258" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <text x="20" y="28" fill="#f8fafc" font-family="sans-serif" font-size="12" font-weight="700">DOCUMENTS INGESTED &amp; CHANGE DETECTION TREND</text>
+    <text x="350" y="28" fill="#94a3b8" font-family="sans-serif" font-size="9.5">Last 7 Days (Hourly)</text>
+
+    <!-- Chart Axes -->
+    <line x1="45" y1="50" x2="45" y2="215" stroke="#334155" stroke-width="1" />
+    <line x1="45" y1="215" x2="435" y2="215" stroke="#334155" stroke-width="1" />
+
+    <!-- Grid lines -->
+    <line x1="45" y1="90" x2="435" y2="90" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3 3" />
+    <line x1="45" y1="130" x2="435" y2="130" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3 3" />
+    <line x1="45" y1="170" x2="435" y2="170" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3 3" />
+
+    <!-- Y-Labels -->
+    <text x="38" y="93" fill="#64748b" font-family="sans-serif" font-size="8" text-anchor="end">12k</text>
+    <text x="38" y="133" fill="#64748b" font-family="sans-serif" font-size="8" text-anchor="end">8k</text>
+    <text x="38" y="173" fill="#64748b" font-family="sans-serif" font-size="8" text-anchor="end">4k</text>
+    <text x="38" y="217" fill="#64748b" font-family="sans-serif" font-size="8" text-anchor="end">0</text>
+
+    <!-- X-Labels -->
+    <text x="65" y="232" fill="#64748b" font-family="sans-serif" font-size="8.5">Mon</text>
+    <text x="125" y="232" fill="#64748b" font-family="sans-serif" font-size="8.5">Tue</text>
+    <text x="185" y="232" fill="#64748b" font-family="sans-serif" font-size="8.5">Wed</text>
+    <text x="245" y="232" fill="#64748b" font-family="sans-serif" font-size="8.5">Thu</text>
+    <text x="305" y="232" fill="#64748b" font-family="sans-serif" font-size="8.5">Fri</text>
+    <text x="365" y="232" fill="#64748b" font-family="sans-serif" font-size="8.5">Sat</text>
+    <text x="415" y="232" fill="#64748b" font-family="sans-serif" font-size="8.5">Sun</text>
+
+    <!-- Cyan Line & Gradient Area (Documents Scraped) -->
+    <path d="M 45 215 L 65 160 L 125 145 L 185 110 L 245 95 L 305 75 L 365 90 L 415 65 L 415 215 Z" fill="url(#chart-area)" />
+    <path d="M 65 160 L 125 145 L 185 110 L 245 95 L 305 75 L 365 90 L 415 65" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Data points -->
+    <circle cx="65" cy="160" r="3.5" fill="#10b981" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="125" cy="145" r="3.5" fill="#10b981" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="185" cy="110" r="3.5" fill="#10b981" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="245" cy="95" r="3.5" fill="#10b981" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="305" cy="75" r="3.5" fill="#10b981" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="365" cy="90" r="3.5" fill="#10b981" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="415" cy="65" r="4.5" fill="#34d399" stroke="#059669" stroke-width="2" />
+
+    <!-- Peak Annotation -->
+    <rect x="345" y="42" width="80" height="18" rx="4" fill="#059669" />
+    <text x="385" y="54" fill="#ffffff" font-family="sans-serif" font-size="8.5" font-weight="700" text-anchor="middle">Peak: 52,140 docs</text>
+  </g>
+
+  <!-- Right Area: Live Regulatory Feeds & Change Alerts -->
+  <g transform="translate(500, 172)">
+    <rect width="275" height="258" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <text x="18" y="28" fill="#f8fafc" font-family="sans-serif" font-size="12" font-weight="700">REAL-TIME PORTAL FEED</text>
+    <text x="257" y="28" fill="#34d399" font-family="sans-serif" font-size="9" font-weight="700" text-anchor="end">&#8226; 100% SYNC</text>
+
+    <!-- Item 1: SBP -->
+    <g transform="translate(14, 42)">
+      <rect width="247" height="46" rx="6" fill="#1e293b" fill-opacity="0.6" stroke="#334155" stroke-width="0.8" />
+      <circle cx="16" cy="16" r="4" fill="#10b981" />
+      <text x="28" y="19" fill="#e2e8f0" font-family="sans-serif" font-size="9.5" font-weight="700">State Bank of Pakistan (SBP)</text>
+      <text x="238" y="19" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="end">4m ago</text>
+      <text x="28" y="34" fill="#38bdf8" font-family="sans-serif" font-size="8.5">BPRD Circular #08: Capital Adequacy Guideline</text>
+    </g>
+
+    <!-- Item 2: SECP -->
+    <g transform="translate(14, 94)">
+      <rect width="247" height="46" rx="6" fill="#1e293b" fill-opacity="0.6" stroke="#334155" stroke-width="0.8" />
+      <circle cx="16" cy="16" r="4" fill="#10b981" />
+      <text x="28" y="19" fill="#e2e8f0" font-family="sans-serif" font-size="9.5" font-weight="700">SECP Compliance Portal</text>
+      <text x="238" y="19" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="end">18m ago</text>
+      <text x="28" y="34" fill="#38bdf8" font-family="sans-serif" font-size="8.5">AML/CFT Revised Reporting Directives 2026</text>
+    </g>
+
+    <!-- Item 3: FATF -->
+    <g transform="translate(14, 146)">
+      <rect width="247" height="46" rx="6" fill="#1e293b" fill-opacity="0.6" stroke="#334155" stroke-width="0.8" />
+      <circle cx="16" cy="16" r="4" fill="#f59e0b" />
+      <text x="28" y="19" fill="#e2e8f0" font-family="sans-serif" font-size="9.5" font-weight="700">FATF Recommendations Update</text>
+      <text x="238" y="19" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="end">1h ago</text>
+      <text x="28" y="34" fill="#f59e0b" font-family="sans-serif" font-size="8.5">High-Risk Jurisdictions Monitoring List</text>
+    </g>
+
+    <!-- Summary Box -->
+    <g transform="translate(14, 198)">
+      <rect width="247" height="46" rx="6" fill="#047857" fill-opacity="0.25" stroke="#059669" stroke-width="1" />
+      <text x="14" y="20" fill="#34d399" font-family="sans-serif" font-size="9.5" font-weight="700">EXECUTIVE SUMMARY DISPATCH</text>
+      <text x="14" y="34" fill="#a7f3d0" font-family="sans-serif" font-size="8.5">Auto-generated digest sent to Compliance Officers</text>
+    </g>
+  </g>
+</svg>

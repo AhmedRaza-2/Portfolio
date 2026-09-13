@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bot-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14" />
+      <stop offset="50%" stop-color="#0e1422" />
+      <stop offset="100%" stop-color="#05080f" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bot-bg)" />
+
+  <!-- Header -->
+  <rect x="25" y="16" width="750" height="46" rx="8" fill="#131a2c" stroke="#222f4c" stroke-width="1.2" />
+  <rect x="38" y="26" width="26" height="26" rx="6" fill="#3b82f6" />
+  <circle cx="47" cy="37" r="2" fill="#ffffff" />
+  <circle cx="55" cy="37" r="2" fill="#ffffff" />
+  <path d="M46 43 H56" stroke="#ffffff" stroke-width="1.5" />
+  <text x="74" y="37" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" letter-spacing="0.4">PYTHON AUTOMATION BOT // SELENIUM HEADLESS ENGINE</text>
+  <text x="74" y="51" fill="#93c5fd" font-family="sans-serif" font-size="9.5">Headless Web Scraping &#8226; Dynamic Proxy Rotation &#8226; Cookie Management &#8226; Automated Interaction</text>
+
+  <rect x="635" y="26" width="125" height="26" rx="13" fill="#3b82f6" fill-opacity="0.2" stroke="#60a5fa" stroke-width="1" />
+  <circle cx="650" cy="39" r="4" fill="#60a5fa" />
+  <text x="662" y="43" fill="#93c5fd" font-family="sans-serif" font-size="10" font-weight="800">BOT POOL IDLE</text>
+
+  <!-- Left: CLI Terminal Live Output -->
+  <g transform="translate(25, 74)">
+    <rect width="460" height="350" rx="10" fill="#050912" stroke="#1d283d" stroke-width="1.2" />
+    
+    <!-- Terminal Titlebar -->
+    <rect x="0" y="0" width="460" height="30" rx="10" fill="#131c2e" />
+    <circle cx="18" cy="15" r="4" fill="#ef4444" />
+    <circle cx="32" cy="15" r="4" fill="#eab308" />
+    <circle cx="46" cy="15" r="4" fill="#22c55e" />
+    <text x="70" y="19" fill="#94a3b8" font-family="Courier, monospace" font-size="10">bot_engine.py --headless --pool=8 --rotate-proxy</text>
+
+    <!-- Terminal Code lines -->
+    <g transform="translate(18, 45)">
+      <text x="0" y="15" fill="#38bdf8" font-family="Courier, monospace" font-size="9.5">[INFO] Initializing ChromeOptions: --disable-blink-features=AutomationControlled</text>
+      <text x="0" y="35" fill="#34d399" font-family="Courier, monospace" font-size="9.5">[OK] Proxy pool connected: 42 residential nodes loaded</text>
+      <text x="0" y="55" fill="#94a3b8" font-family="Courier, monospace" font-size="9.5">[TASK #104] Connecting to target endpoint via 185.220.101.4:8080</text>
+      <text x="0" y="75" fill="#fbbf24" font-family="Courier, monospace" font-size="9.5">[CAPTCHA] Solving automated verification challenges: PASSED (0.42s)</text>
+      <text x="0" y="95" fill="#34d399" font-family="Courier, monospace" font-size="9.5">[EXTRACT] Ingested 128 elements &#8226; Writing structured JSON to disk</text>
+      <text x="0" y="115" fill="#94a3b8" font-family="Courier, monospace" font-size="9.5">[TASK #105] Rotating user-agent &amp; session cookies... complete</text>
+      <text x="0" y="135" fill="#38bdf8" font-family="Courier, monospace" font-size="9.5">[INFO] Next scheduled execution in 180 seconds</text>
+
+      <rect x="0" y="160" width="424" height="115" rx="6" fill="#0c1424" stroke="#1d283d" stroke-width="1" />
+      <text x="14" y="182" fill="#60a5fa" font-family="sans-serif" font-size="10" font-weight="800">ACTIVE SCRAPE BATCH TELEMETRY</text>
+      <text x="14" y="202" fill="#cbd5e1" font-family="sans-serif" font-size="9.5">Requests Completed: <tspan fill="#34d399" font-weight="700">14,280</tspan> &#8226; Success Rate: <tspan fill="#34d399" font-weight="700">99.8%</tspan></text>
+      <text x="14" y="222" fill="#cbd5e1" font-family="sans-serif" font-size="9.5">Anti-Bot Detection Blocks: <tspan fill="#60a5fa" font-weight="700">0</tspan> (Clean Stealth Fingerprinting)</text>
+      <text x="14" y="242" fill="#cbd5e1" font-family="sans-serif" font-size="9.5">Average Page Cycle Time: <tspan fill="#fbbf24" font-weight="700">1.14s</tspan></text>
+    </g>
+  </g>
+
+  <!-- Right: Proxy & Engine Architecture -->
+  <g transform="translate(505, 74)">
+    <rect width="270" height="350" rx="10" fill="#0a1120" stroke="#1d283d" stroke-width="1.2" />
+
+    <rect x="16" y="16" width="238" height="32" rx="6" fill="#131c2e" />
+    <text x="135" y="36" fill="#f8fafc" font-family="sans-serif" font-size="11" font-weight="800" text-anchor="middle">NODE &amp; PROXY STATUS</text>
+
+    <!-- Proxy Node 1 -->
+    <g transform="translate(16, 58)">
+      <rect width="238" height="44" rx="6" fill="#101b2f" stroke="#1f2d47" stroke-width="1" />
+      <circle cx="16" cy="22" r="4" fill="#10b981" />
+      <text x="28" y="20" fill="#f1f5f9" font-family="sans-serif" font-size="9.5" font-weight="700">US-East Node (Virginia)</text>
+      <text x="28" y="34" fill="#94a3b8" font-family="Courier, monospace" font-size="8.5">Ping: 18ms &#8226; Residential IP</text>
+    </g>
+
+    <!-- Proxy Node 2 -->
+    <g transform="translate(16, 110)">
+      <rect width="238" height="44" rx="6" fill="#101b2f" stroke="#1f2d47" stroke-width="1" />
+      <circle cx="16" cy="22" r="4" fill="#10b981" />
+      <text x="28" y="20" fill="#f1f5f9" font-family="sans-serif" font-size="9.5" font-weight="700">EU-West Node (Frankfurt)</text>
+      <text x="28" y="34" fill="#94a3b8" font-family="Courier, monospace" font-size="8.5">Ping: 24ms &#8226; Rotating Subnet</text>
+    </g>
+
+    <!-- Proxy Node 3 -->
+    <g transform="translate(16, 162)">
+      <rect width="238" height="44" rx="6" fill="#101b2f" stroke="#1f2d47" stroke-width="1" />
+      <circle cx="16" cy="22" r="4" fill="#10b981" />
+      <text x="28" y="20" fill="#f1f5f9" font-family="sans-serif" font-size="9.5" font-weight="700">AP-South Node (Singapore)</text>
+      <text x="28" y="34" fill="#94a3b8" font-family="Courier, monospace" font-size="8.5">Ping: 42ms &#8226; Active Worker #3</text>
+    </g>
+
+    <!-- Modular Plugins -->
+    <g transform="translate(16, 222)">
+      <rect width="238" height="105" rx="6" fill="#101b2f" stroke="#1f2d47" stroke-width="1" />
+      <text x="14" y="20" fill="#60a5fa" font-family="sans-serif" font-size="9.5" font-weight="800">SUPPORTED MODULES</text>
+      <text x="14" y="38" fill="#e2e8f0" font-family="sans-serif" font-size="8.5">&#8226; YouTube Channel &amp; Analytics Scraper</text>
+      <text x="14" y="54" fill="#e2e8f0" font-family="sans-serif" font-size="8.5">&#8226; Automated Form Filler &amp; Lead Poster</text>
+      <text x="14" y="70" fill="#e2e8f0" font-family="sans-serif" font-size="8.5">&#8226; Multi-tab Session State Persister</text>
+      <text x="14" y="86" fill="#e2e8f0" font-family="sans-serif" font-size="8.5">&#8226; Headless Browser DOM Parser</text>
+    </g>
+  </g>
+</svg>

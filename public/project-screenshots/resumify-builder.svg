@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="res-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1a" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#040711" />
+    </linearGradient>
+    <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#res-bg)" />
+
+  <g stroke="#1e293b" stroke-width="0.7" opacity="0.35">
+    <line x1="0" y1="65" x2="800" y2="65" />
+    <line x1="0" y1="130" x2="800" y2="130" />
+    <line x1="0" y1="195" x2="800" y2="195" />
+    <line x1="0" y1="260" x2="800" y2="260" />
+    <line x1="0" y1="325" x2="800" y2="325" />
+    <line x1="0" y1="390" x2="800" y2="390" />
+  </g>
+
+  <!-- Header -->
+  <rect x="25" y="16" width="750" height="46" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1.2" />
+  <rect x="38" y="26" width="26" height="26" rx="6" fill="#0284c7" />
+  <path d="M44 32 H58 M44 37 H54 M44 42 H58 M44 46 H50" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+  <text x="74" y="37" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" letter-spacing="0.4">RESUMIFY // AI RESUME BUILDER &amp; ATS OPTIMIZER</text>
+  <text x="74" y="51" fill="#94a3b8" font-family="sans-serif" font-size="9.5">Flutter &#8226; Dart &#8226; Real-Time ATS Scoring &#8226; AI Suggestion Engine &#8226; Cross-Platform</text>
+
+  <rect x="635" y="26" width="125" height="26" rx="13" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1" />
+  <circle cx="650" cy="39" r="4" fill="#38bdf8" />
+  <text x="662" y="43" fill="#7dd3fc" font-family="sans-serif" font-size="10" font-weight="800">ATS SCORE: 96%</text>
+
+  <!-- Left: Resume Canvas Preview -->
+  <g transform="translate(35, 76)">
+    <rect width="460" height="348" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    
+    <!-- Top Resume Header inside paper -->
+    <rect x="24" y="20" width="412" height="52" rx="4" fill="#0f172a" />
+    <text x="40" y="42" fill="#f8fafc" font-family="sans-serif" font-size="14" font-weight="800">ALEXANDER WRIGHT</text>
+    <text x="40" y="58" fill="#38bdf8" font-family="sans-serif" font-size="9.5" font-weight="600">Senior AI Engineer &amp; Full Stack Architect &#8226; San Francisco, CA</text>
+
+    <!-- Section: Experience -->
+    <text x="24" y="94" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="800">PROFESSIONAL EXPERIENCE</text>
+    <line x1="24" y1="98" x2="436" y2="98" stroke="#e2e8f0" stroke-width="1.5" />
+
+    <text x="24" y="114" fill="#1e293b" font-family="sans-serif" font-size="9.5" font-weight="700">Lead ML Engineer &#8211; CloudScale Tech</text>
+    <text x="436" y="114" fill="#64748b" font-family="sans-serif" font-size="8.5" text-anchor="end">2023 &#8211; Present</text>
+    <rect x="24" y="122" width="412" height="8" rx="2" fill="#f1f5f9" />
+    <rect x="24" y="134" width="380" height="8" rx="2" fill="#f1f5f9" />
+    <rect x="24" y="146" width="400" height="8" rx="2" fill="#f1f5f9" />
+
+    <!-- AI ATS Highlight Box on Resume -->
+    <rect x="24" y="164" width="412" height="44" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1" />
+    <text x="34" y="180" fill="#1d4ed8" font-family="sans-serif" font-size="9" font-weight="700">AI RECOMMENDATION APPLIED</text>
+    <text x="34" y="196" fill="#1e40af" font-family="sans-serif" font-size="8.5">Optimized action verbs: "Spearheaded distributed model inference serving 500k+ req/day"</text>
+
+    <!-- Skills Section -->
+    <text x="24" y="228" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="800">TECHNICAL SKILLS</text>
+    <line x1="24" y1="232" x2="436" y2="232" stroke="#e2e8f0" stroke-width="1.5" />
+    
+    <g transform="translate(24, 242)">
+      <rect x="0" y="0" width="64" height="18" rx="4" fill="#f1f5f9" stroke="#cbd5e1" />
+      <text x="32" y="12" fill="#334155" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">Python / PyTorch</text>
+
+      <rect x="70" y="0" width="60" height="18" rx="4" fill="#f1f5f9" stroke="#cbd5e1" />
+      <text x="100" y="12" fill="#334155" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">Flutter / Dart</text>
+
+      <rect x="136" y="0" width="55" height="18" rx="4" fill="#f1f5f9" stroke="#cbd5e1" />
+      <text x="163" y="12" fill="#334155" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">REST APIs</text>
+
+      <rect x="197" y="0" width="52" height="18" rx="4" fill="#f1f5f9" stroke="#cbd5e1" />
+      <text x="223" y="12" fill="#334155" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">Docker</text>
+    </g>
+
+    <!-- Bottom PDF Export Bar -->
+    <rect x="24" y="285" width="412" height="44" rx="6" fill="#0284c7" />
+    <text x="180" y="312" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="800">DOWNLOAD ATS-COMPLIANT PDF</text>
+  </g>
+
+  <!-- Right: Flutter Mobile Device Mockup -->
+  <g transform="translate(520, 76)">
+    <rect width="245" height="348" rx="24" fill="#0f172a" stroke="#334155" stroke-width="2" />
+    <!-- Speaker slit -->
+    <rect x="92" y="10" width="60" height="4" rx="2" fill="#475569" />
+
+    <!-- Screen inside phone -->
+    <rect x="12" y="24" width="221" height="300" rx="16" fill="#020617" />
+    
+    <text x="24" y="46" fill="#f8fafc" font-family="sans-serif" font-size="11" font-weight="800">Resumify Mobile</text>
+    <text x="24" y="60" fill="#38bdf8" font-family="sans-serif" font-size="8.5">Live ATS Analysis</text>
+
+    <!-- Score Circle -->
+    <circle cx="122" cy="110" r="36" fill="none" stroke="#1e293b" stroke-width="6" />
+    <circle cx="122" cy="110" r="36" fill="none" stroke="#38bdf8" stroke-width="6" stroke-dasharray="200" stroke-dashoffset="20" stroke-linecap="round" />
+    <text x="122" y="114" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="900" text-anchor="middle">96%</text>
+    <text x="122" y="126" fill="#94a3b8" font-family="sans-serif" font-size="7.5" text-anchor="middle">MATCH RATE</text>
+
+    <!-- Suggestions List inside app -->
+    <g transform="translate(20, 160)">
+      <rect width="181" height="36" rx="6" fill="#1e293b" />
+      <circle cx="14" cy="18" r="4" fill="#22c55e" />
+      <text x="26" y="16" fill="#f8fafc" font-family="sans-serif" font-size="8" font-weight="700">Keyword Match Strong</text>
+      <text x="26" y="26" fill="#94a3b8" font-family="sans-serif" font-size="7">14 of 15 targeted skills found</text>
+    </g>
+
+    <g transform="translate(20, 204)">
+      <rect width="181" height="36" rx="6" fill="#1e293b" />
+      <circle cx="14" cy="18" r="4" fill="#38bdf8" />
+      <text x="26" y="16" fill="#f8fafc" font-family="sans-serif" font-size="8" font-weight="700">Quantifiable Metrics Added</text>
+      <text x="26" y="26" fill="#94a3b8" font-family="sans-serif" font-size="7">7 quantified impact bullets</text>
+    </g>
+
+    <g transform="translate(20, 248)">
+      <rect width="181" height="36" rx="6" fill="#0284c7" />
+      <text x="90" y="22" fill="#ffffff" font-family="sans-serif" font-size="8.5" font-weight="800" text-anchor="middle">Generate AI Summary &#8594;</text>
+    </g>
+  </g>
+</svg>

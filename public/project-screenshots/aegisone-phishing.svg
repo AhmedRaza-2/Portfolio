@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aegis-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="red-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#aegis-bg)" />
+
+  <!-- Cyber Grid -->
+  <g stroke="#1e293b" stroke-width="0.7" opacity="0.35">
+    <line x1="0" y1="65" x2="800" y2="65" />
+    <line x1="0" y1="130" x2="800" y2="130" />
+    <line x1="0" y1="195" x2="800" y2="195" />
+    <line x1="0" y1="260" x2="800" y2="260" />
+    <line x1="0" y1="325" x2="800" y2="325" />
+    <line x1="0" y1="390" x2="800" y2="390" />
+  </g>
+
+  <!-- Top Header -->
+  <rect x="25" y="16" width="750" height="46" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1.2" />
+  <rect x="38" y="26" width="26" height="26" rx="6" fill="#dc2626" />
+  <!-- Shield Icon -->
+  <path d="M51 31 L58 34 L58 41 C58 46 51 49 51 49 C51 49 44 46 44 41 L44 34 Z" stroke="#ffffff" stroke-width="1.8" fill="none" />
+  <text x="74" y="37" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" letter-spacing="0.4">AEGISONE // PHISHING DETECTION &amp; OUTLOOK QUARANTINE</text>
+  <text x="74" y="51" fill="#94a3b8" font-family="sans-serif" font-size="9.5">Scikit-Learn Random Forest Classifier &#8226; MS Outlook Mail API &#8226; Automated Threat Isolation</text>
+
+  <!-- Threat Badge -->
+  <rect x="615" y="26" width="145" height="26" rx="13" fill="#dc2626" fill-opacity="0.2" stroke="#ef4444" stroke-width="1" />
+  <circle cx="630" cy="39" r="4" fill="#ef4444" />
+  <text x="642" y="43" fill="#fca5a5" font-family="sans-serif" font-size="10" font-weight="800">MALICIOUS ISOLATED</text>
+
+  <!-- Left: Outlook Email Ingestion Pane -->
+  <g transform="translate(25, 74)">
+    <rect width="465" height="350" rx="10" fill="#0b1329" stroke="#1e293b" stroke-width="1.2" />
+
+    <rect x="16" y="16" width="433" height="32" rx="6" fill="#1e293b" fill-opacity="0.8" />
+    <circle cx="32" cy="32" r="5" fill="#38bdf8" />
+    <text x="46" y="36" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="700">Outlook Ingestion Stream // Message #8492</text>
+    <rect x="330" y="22" width="110" height="20" rx="4" fill="#ef4444" fill-opacity="0.3" stroke="#ef4444" stroke-width="0.8" />
+    <text x="385" y="36" fill="#fca5a5" font-family="sans-serif" font-size="9" font-weight="800" text-anchor="middle">QUARANTINED</text>
+
+    <!-- Email Details Card -->
+    <rect x="16" y="58" width="433" height="205" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+
+    <!-- From Field -->
+    <text x="30" y="82" fill="#64748b" font-family="sans-serif" font-size="10" font-weight="700">FROM:</text>
+    <text x="75" y="82" fill="#f87171" font-family="Courier, monospace" font-size="10.5" font-weight="700">security-notice@m1crosoft-portal.support</text>
+    <rect x="365" y="72" width="72" height="16" rx="3" fill="#ef4444" fill-opacity="0.25" />
+    <text x="401" y="83" fill="#fca5a5" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">SPOOFED DOMAIN</text>
+
+    <!-- Subject Field -->
+    <text x="30" y="106" fill="#64748b" font-family="sans-serif" font-size="10" font-weight="700">SUBJ:</text>
+    <text x="75" y="106" fill="#f1f5f9" font-family="sans-serif" font-size="11" font-weight="700">[URGENT] Corporate Account Access Revocation in 2 Hours</text>
+
+    <line x1="30" y1="120" x2="435" y2="120" stroke="#1e293b" stroke-width="1" />
+
+    <!-- Body Preview -->
+    <text x="30" y="140" fill="#94a3b8" font-family="sans-serif" font-size="10">Dear Employee,</text>
+    <text x="30" y="158" fill="#94a3b8" font-family="sans-serif" font-size="10">Our automated security monitor noticed anomalous login attempts from your IP.</text>
+    <text x="30" y="174" fill="#94a3b8" font-family="sans-serif" font-size="10">Please authenticate immediately to prevent corporate directory lockout:</text>
+
+    <!-- Malicious Link Highlight Box -->
+    <rect x="30" y="186" width="390" height="32" rx="5" fill="#450a0a" stroke="#dc2626" stroke-width="1" />
+    <text x="40" y="206" fill="#fca5a5" font-family="Courier, monospace" font-size="10">http://auth-token-verify.net/session/login?id=89231</text>
+    <text x="350" y="206" fill="#f87171" font-family="sans-serif" font-size="9" font-weight="800">[MALICIOUS]</text>
+
+    <text x="30" y="240" fill="#64748b" font-family="sans-serif" font-size="9.5">Attachment: <tspan fill="#cbd5e1" font-weight="600">Security_Form.exe (1.2 MB)</tspan> &#8226; <tspan fill="#ef4444" font-weight="700">Executable blocked</tspan></text>
+
+    <!-- Bottom Action Pill -->
+    <rect x="16" y="275" width="433" height="58" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <circle cx="36" cy="304" r="10" fill="#059669" />
+    <path d="M32 304 L35 307 L41 301" stroke="#ffffff" stroke-width="2" fill="none" />
+    <text x="56" y="298" fill="#34d399" font-family="sans-serif" font-size="11" font-weight="800">OUTLOOK ACTION EXECUTED</text>
+    <text x="56" y="316" fill="#94a3b8" font-family="sans-serif" font-size="9.5">Email deleted from user inbox and moved to Security Quarantine Store via MS Graph API.</text>
+  </g>
+
+  <!-- Right: ML Random Forest Inference & Threat Scores -->
+  <g transform="translate(505, 74)">
+    <rect width="270" height="350" rx="10" fill="#0b1329" stroke="#1e293b" stroke-width="1.2" />
+
+    <rect x="16" y="16" width="238" height="32" rx="6" fill="#1e293b" />
+    <text x="135" y="36" fill="#f8fafc" font-family="sans-serif" font-size="11" font-weight="800" text-anchor="middle">RANDOM FOREST CLASSIFIER</text>
+
+    <!-- Probability Gauge Box -->
+    <g transform="translate(16, 58)">
+      <rect width="238" height="80" rx="8" fill="#450a0a" fill-opacity="0.4" stroke="#ef4444" stroke-width="1.2" />
+      <text x="18" y="26" fill="#fca5a5" font-family="sans-serif" font-size="10" font-weight="700">PHISHING CONFIDENCE</text>
+      <text x="18" y="58" fill="#ef4444" font-family="sans-serif" font-size="28" font-weight="900">98.7%</text>
+      <text x="135" y="58" fill="#f87171" font-family="sans-serif" font-size="11" font-weight="700">HIGH CRITICAL</text>
+      <rect x="18" y="68" width="202" height="4" rx="2" fill="#2d1515" />
+      <rect x="18" y="68" width="199" height="4" rx="2" fill="#ef4444" />
+    </g>
+
+    <!-- Feature Analysis Breakdown -->
+    <g transform="translate(16, 148)">
+      <text x="0" y="14" fill="#94a3b8" font-family="sans-serif" font-size="10" font-weight="700">ML FEATURE IMPORTANCE</text>
+
+      <!-- Bar 1: URL Characteristics -->
+      <text x="0" y="36" fill="#cbd5e1" font-family="sans-serif" font-size="9.5">URL Heuristics &amp; IP Host</text>
+      <text x="238" y="36" fill="#f87171" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="end">42.1%</text>
+      <rect x="0" y="42" width="238" height="6" rx="3" fill="#1e293b" />
+      <rect x="0" y="42" width="100" height="6" rx="3" fill="#ef4444" />
+
+      <!-- Bar 2: Keyword NLP Urgency -->
+      <text x="0" y="66" fill="#cbd5e1" font-family="sans-serif" font-size="9.5">Urgency &amp; Coercion NLP</text>
+      <text x="238" y="66" fill="#f87171" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="end">34.5%</text>
+      <rect x="0" y="72" width="238" height="6" rx="3" fill="#1e293b" />
+      <rect x="0" y="72" width="82" height="6" rx="3" fill="#f97316" />
+
+      <!-- Bar 3: Domain & SPF/DKIM Mismatch -->
+      <text x="0" y="96" fill="#cbd5e1" font-family="sans-serif" font-size="9.5">Header &amp; DKIM Mismatch</text>
+      <text x="238" y="96" fill="#f87171" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="end">23.4%</text>
+      <rect x="0" y="102" width="238" height="6" rx="3" fill="#1e293b" />
+      <rect x="0" y="102" width="56" height="6" rx="3" fill="#eab308" />
+    </g>
+
+    <!-- Status Footnote -->
+    <g transform="translate(16, 274)">
+      <rect width="238" height="58" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="14" y="22" fill="#38bdf8" font-family="sans-serif" font-size="9.5" font-weight="700">ENTERPRISE TELEMETRY</text>
+      <text x="14" y="37" fill="#94a3b8" font-family="sans-serif" font-size="8.5">Model: Random Forest (n_estimators=150)</text>
+      <text x="14" y="50" fill="#34d399" font-family="sans-serif" font-size="8.5" font-weight="600">Accuracy: 99.4% &#8226; False Positive: 0.2%</text>
+    </g>
+  </g>
+</svg>
