@@ -1,0 +1,36 @@
+# Ahmed Raza — AI/ML Developer & AI Automation Specialist
+
+> AI/ML Developer and Computer Science undergraduate at Air University Islamabad specializing in Generative AI, LLMs, RAG pipelines, NLP, and AI workflow automation.
+
+## Core Professional Identity
+- Name: Ahmed Raza
+- Primary Roles: AI/ML Developer, Generative AI Engineer, AI Automation Specialist, Software Engineer
+- Education: BS in Computer Science, Air University Islamabad (Class of 2027)
+- Location: Islamabad, Federal Capital Territory, Pakistan (PKT / UTC+5)
+- Remote Availability: Worldwide remote engineering (4-6+ hours daily overlap with US/UK/EU time zones)
+- Email: araza2125012.pgc@gmail.com
+- Phone / WhatsApp: +92 334 5216102
+- Portfolio: https://ahmed-raza.dev/
+- LinkedIn: https://www.linkedin.com/in/ahmed-r-43b6a1266/
+- GitHub: https://github.com/AhmedRaza-2
+
+## Professional Experience
+- **Askari Bank AI Team (Internship):** Built an enterprise automated regulatory-monitoring system that scrapes and reviews 80-100+ banking compliance portals and 50,000+ documents, reducing 32 hours of weekly manual auditing to ~10 minutes.
+- **INARA Technologies (Lead AI Developer):** Developed RAG-powered conversational customer assistants (Aura AI) with dynamic URL scraping, vector embeddings, and real-time response pipelines.
+- **National CERT Pakistan:** Conducted web application vulnerability assessments and threat classification on critical national assets.
+
+## Production Projects & Case Studies
+- **AEGIS-ONE — AI-Based Phishing Prevention System:** Multi-modal machine learning and NLP detection engine protecting users against phishing URLs, spoofed emails, and malicious links with real-time risk scoring and browser quarantine. (URL: https://ahmed-raza.dev/projects/aegis-one/)
+- **Regulatory Monitoring Automation:** High-throughput Selenium/Python pipeline monitoring 80-100+ financial regulatory bodies, automated PDF parsing, and delta alert delivery. (URL: https://ahmed-raza.dev/projects/regulatory-monitoring/)
+- **Aura AI:** RAG conversational support assistant trained on live website URLs with citation retrieval. (URL: https://ahmed-raza.dev/projects/aura-ai/)
+- **TradeOps — Commercial Invoice Data Extraction:** Automated optical & NLP parser extracting ~40 structured fields from commercial invoices directly into SQL Server tables. (URL: https://ahmed-raza.dev/projects/tradeops/)
+- **RESUMIFY:** Cross-platform Flutter mobile application generating ATS-optimized resumes with real-time AI scoring and recommendations. (URL: https://ahmed-raza.dev/projects/resumify/)
+- **Hybrid AES+RSA Cryptographic Platform:** Secure end-to-end file encryption combining RSA-2048 asymmetric key exchange with AES-256-GCM symmetric payload encryption. (URL: https://ahmed-raza.dev/projects/file-encryption/)
+
+## Technical Skills
+- **Languages:** Python, TypeScript, JavaScript, Dart, SQL, C++, HTML5/CSS3
+- **AI & ML:** Generative AI, LLMs, RAG, NLP, LangChain, Hugging Face, Scikit-learn, Vector Databases, Prompt Engineering
+- **Web & Full Stack:** React, Next.js, Node.js, Express, Tailwind CSS, REST APIs
+- **Mobile:** Flutter, Dart, Cross-Platform Android/iOS
+- **Data & Databases:** Microsoft SQL Server (SSMS), PostgreSQL, MongoDB
+- **Security & Systems:** Cryptography (AES-256, RSA-2048), Web Application Security, Linux, Git, Docker

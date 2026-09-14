@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura AI — RAG Conversational Assistant | Ahmed Raza</title>
+  <meta name="description" content="Aura AI is an intelligent customer support chatbot engineered by Ahmed Raza at INARA Technologies, leveraging Retrieval-Augmented Generation (RAG) and dynamic website URL training." />
+  <meta name="keywords" content="Aura AI, RAG Chatbot, Retrieval-Augmented Generation, Ahmed Raza, INARA Technologies, LLMs, AI Customer Support" />
+  <meta name="author" content="Ahmed Raza" />
+  <link rel="canonical" href="https://ahmed-raza.dev/projects/aura-ai/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aura AI — RAG Conversational Assistant" />
+  <meta property="og:description" content="Dynamic website scraping, vector embeddings, and zero-hallucination customer support chatbot." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://ahmed-raza.dev/projects/aura-ai/" />
+  <meta property="og:image" content="https://ahmed-raza.dev/assets/banner-01.png" />
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #10b981;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      padding: 24px 16px 64px;
+    }
+    .container { max-width: 840px; margin: 0 auto; }
+    header { padding: 32px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .back-link:hover { text-decoration: underline; }
+    h1 { font-size: 30px; font-weight: 800; line-height: 1.25; margin-bottom: 12px; color: #ffffff; }
+    .meta { font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px; }
+    h2 { font-size: 22px; font-weight: 700; margin: 36px 0 12px; color: #38bdf8; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    p { margin-bottom: 16px; color: #cbd5e1; }
+    ul { margin: 0 0 20px 24px; color: #cbd5e1; }
+    li { margin-bottom: 8px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 24px 0; }
+    .tag { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; margin: 4px 4px 4px 0; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .btn { display: inline-block; background: var(--primary); color: #022c22; padding: 10px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+    .btn:hover { opacity: 0.9; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Aura AI — RAG-Powered Conversational Assistant",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Ahmed Raza",
+      "url": "https://ahmed-raza.dev/"
+    },
+    "description": "RAG-powered conversational customer assistant trained dynamically on website URLs with real-time vector embeddings and citation retrieval.",
+    "url": "https://ahmed-raza.dev/projects/aura-ai/"
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="https://ahmed-raza.dev/#portfolio" class="back-link">&larr; Return to Main Portfolio</a>
+      <h1>Aura AI — RAG-Powered Conversational Assistant</h1>
+      <div class="meta">
+        <span>Lead AI Developer: <strong>Ahmed Raza</strong></span>
+        <span>Organization: <strong>INARA Technologies</strong></span>
+        <span>Specialization: <strong>Generative AI &amp; RAG Architecture</strong></span>
+      </div>
+    </header>
+
+    <main>
+      <h2>What is Aura AI?</h2>
+      <p>Aura AI is a production conversational AI assistant designed for corporate and e-commerce customer support. Built on a Retrieval-Augmented Generation (RAG) architecture, it dynamically indexes customer websites and knowledge bases, allowing it to answer queries accurately without hallucinations or expensive model fine-tuning.</p>
+
+      <h2>What Problem Does It Solve?</h2>
+      <p>Traditional rule-based chatbots frustrate users with rigid script menus, while generic large language models frequently hallucinate facts or leak outdated company policies. Aura AI solves this by grounding every answer directly in company documentation with precise citations and conversational guardrails.</p>
+
+      <h2>How Does It Work?</h2>
+      <ul>
+        <li><strong>Dynamic Web Ingestion:</strong> Ingests live company website URLs, sitemaps, and help articles, parsing clean textual hierarchy while filtering boilerplates.</li>
+        <li><strong>Vector Chunking &amp; Embeddings:</strong> Text is intelligently chunked and converted into semantic vector embeddings stored in a high-speed vector index.</li>
+        <li><strong>Hybrid Semantic Search:</strong> When a user asks a question, Aura AI performs cosine-similarity matching to retrieve the most relevant knowledge passages.</li>
+        <li><strong>Strict Grounded Response Generation:</strong> The LLM synthesizes natural responses constrained strictly to the retrieved context, eliminating hallucinations.</li>
+      </ul>
+
+      <div class="card">
+        <h3>Technology Stack</h3>
+        <p style="margin-top: 8px;">
+          <span class="tag">Python</span>
+          <span class="tag">Retrieval-Augmented Generation (RAG)</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">Vector Database (ChromaDB)</span>
+          <span class="tag">OpenAI &amp; LLM APIs</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Web Scraping</span>
+        </p>
+      </div>
+
+      <h2>Ahmed Raza's Contribution</h2>
+      <p>Ahmed Raza served as the Lead AI Developer for Aura AI at INARA Technologies, designing the automated ingestion scraper, vector chunking strategies, and low-latency API integration powering the customer-facing interface.</p>
+
+      <div style="margin-top: 32px;">
+        <a href="https://ahmed-raza.dev/#portfolio" class="btn">Explore All Projects on Portfolio</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

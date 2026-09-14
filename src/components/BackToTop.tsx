@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
+import { useSmoothScroll } from '../context/SmoothScrollContext';
 
 export const BackToTop: React.FC = () => {
   const [visible, setVisible] = useState(false);
+  const { scrollTo } = useSmoothScroll();
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -18,10 +20,7 @@ export const BackToTop: React.FC = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    scrollTo(0, { duration: 1.4 });
   };
 
   if (!visible) return null;

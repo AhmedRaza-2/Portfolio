@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RESUMIFY — AI Resume Builder | Ahmed Raza</title>
+  <meta name="description" content="RESUMIFY is a cross-platform Flutter mobile application developed by Ahmed Raza that generates ATS-compliant resumes with real-time AI scoring and tailored job recommendations." />
+  <meta name="keywords" content="RESUMIFY, AI Resume Builder, Flutter mobile app, Dart, ATS optimization, Ahmed Raza, Islamabad Pakistan" />
+  <meta name="author" content="Ahmed Raza" />
+  <link rel="canonical" href="https://ahmed-raza.dev/projects/resumify/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="RESUMIFY — AI Resume Builder" />
+  <meta property="og:description" content="Cross-platform Flutter application generating ATS-optimized resumes with AI scoring." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://ahmed-raza.dev/projects/resumify/" />
+  <meta property="og:image" content="https://ahmed-raza.dev/assets/banner-01.png" />
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #10b981;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      padding: 24px 16px 64px;
+    }
+    .container { max-width: 840px; margin: 0 auto; }
+    header { padding: 32px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .back-link:hover { text-decoration: underline; }
+    h1 { font-size: 30px; font-weight: 800; line-height: 1.25; margin-bottom: 12px; color: #ffffff; }
+    .meta { font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px; }
+    h2 { font-size: 22px; font-weight: 700; margin: 36px 0 12px; color: #38bdf8; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    p { margin-bottom: 16px; color: #cbd5e1; }
+    ul { margin: 0 0 20px 24px; color: #cbd5e1; }
+    li { margin-bottom: 8px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 24px 0; }
+    .tag { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; margin: 4px 4px 4px 0; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .btn { display: inline-block; background: var(--primary); color: #022c22; padding: 10px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+    .btn:hover { opacity: 0.9; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "RESUMIFY — AI-Powered Mobile Resume Builder",
+    "applicationCategory": "MobileApplication",
+    "operatingSystem": "Android, iOS",
+    "author": {
+      "@type": "Person",
+      "name": "Ahmed Raza",
+      "url": "https://ahmed-raza.dev/"
+    },
+    "description": "Cross-platform Flutter mobile application generating ATS-optimized resumes with AI recommendations and live preview.",
+    "url": "https://ahmed-raza.dev/projects/resumify/"
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="https://ahmed-raza.dev/#portfolio" class="back-link">&larr; Return to Main Portfolio</a>
+      <h1>RESUMIFY — AI-Powered Mobile Resume Builder</h1>
+      <div class="meta">
+        <span>Lead Developer: <strong>Ahmed Raza</strong></span>
+        <span>Platform: <strong>Flutter (iOS &amp; Android)</strong></span>
+        <span>Domain: <strong>Mobile Engineering &amp; AI Integration</strong></span>
+      </div>
+    </header>
+
+    <main>
+      <h2>What is RESUMIFY?</h2>
+      <p>RESUMIFY is a mobile application built with Flutter and Dart that transforms raw career experience into high-scoring, ATS (Applicant Tracking System) optimized resumes. It combines automated PDF typesetting with AI feedback algorithms that analyze phrasing, metric quantification, and keyword alignment against target industry roles.</p>
+
+      <h2>What Problem Does It Solve?</h2>
+      <p>Over 75% of qualified resumes get automatically filtered out by enterprise ATS systems before ever reaching a human recruiter due to improper formatting, missing keywords, or non-standard visual columns. RESUMIFY enforces standard single-column schemas and guides candidates to write action-oriented bullet points that pass automated parsers.</p>
+
+      <h2>How Does It Work?</h2>
+      <ul>
+        <li><strong>Interactive Multi-Step Form:</strong> Intuitive mobile inputs for personal details, work experience, education, projects, and skills with real-time validation.</li>
+        <li><strong>ATS Keyword Scoring:</strong> Compares the user's resume draft against target job titles to identify missing hard and soft skills.</li>
+        <li><strong>AI Phrasing Improvements:</strong> Generates impactful achievement bullets using the Google XYZ formula ("Accomplished [X] as measured by [Y], by doing [Z]").</li>
+        <li><strong>Vector PDF Export:</strong> Compiles publication-grade, machine-readable PDF documents directly on the device with custom typography and clean margins.</li>
+      </ul>
+
+      <div class="card">
+        <h3>Technology Stack</h3>
+        <p style="margin-top: 8px;">
+          <span class="tag">Flutter</span>
+          <span class="tag">Dart</span>
+          <span class="tag">Provider / Bloc State Management</span>
+          <span class="tag">PDF Generation Engine</span>
+          <span class="tag">AI API Integration</span>
+          <span class="tag">Cross-Platform iOS &amp; Android</span>
+        </p>
+      </div>
+
+      <h2>Ahmed Raza's Contribution</h2>
+      <p>Ahmed Raza conceived, architected, and coded the RESUMIFY application, designing the mobile UI layout, implementing responsive state management in Flutter, and building the ATS scoring integration.</p>
+
+      <div style="margin-top: 32px;">
+        <a href="https://ahmed-raza.dev/#portfolio" class="btn">Explore All Projects on Portfolio</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -2,44 +2,99 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Canonical Homepage -->
   <url>
-    <loc>https://ahmedraza.dev/</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://ahmed-raza.dev/</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://ahmedraza.dev/assets/banner-01.png</image:loc>
-      <image:title>Ahmed Raza - Full Stack Developer &amp; AI Solutions Engineer</image:title>
-      <image:caption>Saving time and money with modern AI and software engineering solutions from MVP to production.</image:caption>
+      <image:loc>https://ahmed-raza.dev/assets/banner-01.png</image:loc>
+      <image:title>Ahmed Raza — AI/ML Developer &amp; AI Solutions Engineer</image:title>
+      <image:caption>Saving time and money with modern AI, Generative AI, RAG pipelines, and automated software engineering.</image:caption>
     </image:image>
   </url>
+
+  <!-- Core Authority Pages -->
   <url>
-    <loc>https://ahmedraza.dev/#features</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://ahmed-raza.dev/about/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ahmed-raza.dev/experience/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ahmed-raza.dev/resume/</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ahmedraza.dev/#portfolio</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://ahmed-raza.dev/contact/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Topical Authority Pillars -->
+  <url>
+    <loc>https://ahmed-raza.dev/ai-ml/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ahmedraza.dev/#resume</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://ahmed-raza.dev/generative-ai/</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ahmedraza.dev/#testimonial</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://ahmed-raza.dev/cybersecurity/</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Production Projects & Case Studies -->
+  <url>
+    <loc>https://ahmed-raza.dev/projects/aegis-one/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ahmedraza.dev/#contact</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://ahmed-raza.dev/projects/regulatory-monitoring/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ahmed-raza.dev/projects/aura-ai/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ahmed-raza.dev/projects/tradeops/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ahmed-raza.dev/projects/resumify/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ahmed-raza.dev/projects/file-encryption/</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -39,5 +39,6 @@ Allow: /
 User-agent: Diffbot
 Allow: /
 
-# Canonical Sitemap
+# Canonical Sitemap & AI Declarations
+Sitemap: https://ahmed-raza.dev/sitemap.xml
 Sitemap: https://ahmedraza.dev/sitemap.xml

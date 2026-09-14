@@ -12,10 +12,22 @@ import { SocialSidebar } from './components/SocialSidebar';
 import { BackToTop } from './components/BackToTop';
 import { AdminModal } from './components/AdminModal';
 import { ResumeModal } from './components/ResumeModal';
-import { PortfolioDataProvider } from './context/PortfolioDataContext';
+import { PortfolioDataProvider, usePortfolioData } from './context/PortfolioDataContext';
+import { SmoothScrollProvider, useSmoothScroll } from './context/SmoothScrollContext';
 
 export const AppContent: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const { isResumeModalOpen, isAdminOpen } = usePortfolioData();
+  const { stop, start } = useSmoothScroll();
+
+  // Pause Lenis smooth scroll while a modal is displayed to prevent background page scrolling
+  useEffect(() => {
+    if (isResumeModalOpen || isAdminOpen) {
+      stop();
+    } else {
+      start();
+    }
+  }, [isResumeModalOpen, isAdminOpen, stop, start]);
 
   useEffect(() => {
     const sections = ['home', 'portfolio', 'resume', 'services', 'faq', 'testimonial', 'contact'];
@@ -94,7 +106,9 @@ export const AppContent: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <PortfolioDataProvider>
-      <AppContent />
+      <SmoothScrollProvider>
+        <AppContent />
+      </SmoothScrollProvider>
     </PortfolioDataProvider>
   );
 };
