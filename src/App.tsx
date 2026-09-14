@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Portfolio } from './components/Portfolio';
@@ -99,6 +100,9 @@ export const AppContent: React.FC = () => {
 
       {/* Private Password-Protected Dynamic Admin Panel */}
       <AdminModal />
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 };
