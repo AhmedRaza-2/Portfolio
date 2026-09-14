@@ -76,25 +76,43 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
           <a
             id="header-brand"
             href="#home"
-            className="flex items-center gap-3 group focus:outline-none rounded-xl p-1 transition-transform"
+            className="flex items-center gap-3 group focus:outline-none rounded-2xl p-1 transition-all duration-200"
           >
-            <div
-              className="w-9 h-9 rounded-full p-0.5 shadow-sm group-hover:scale-105 transition-transform"
-              style={{ backgroundColor: 'var(--color-primary)' }}
-            >
-              <img
-                src="/assets/logos-circle.png"
-                alt="Ahmed Raza"
-                className="w-full h-full object-cover rounded-full bg-neutral-900"
-                onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
+            {/* Visual Avatar */}
+            <div className="relative shrink-0">
+              <div
+                className="w-10 h-10 rounded-full p-[2px] shadow-md group-hover:scale-105 group-hover:shadow-lg transition-all duration-300"
+                style={{
+                  background: 'linear-gradient(135deg, var(--color-primary), #38bdf8, #818cf8)',
                 }}
-              />
+              >
+                <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
+                  <img
+                    src="/assets/banner-01.png"
+                    alt="Ahmed Raza"
+                    className="w-full h-full object-cover object-[50%_15%] group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div
+                    className="w-full h-full hidden items-center justify-center font-bold text-xs tracking-wider text-white"
+                    style={{ backgroundColor: 'var(--color-primary)' }}
+                  >
+                    AR
+                  </div>
+                </div>
+              </div>
             </div>
+
+            {/* Typography & Identity */}
             <div className="flex flex-col text-left">
               <div className="flex items-center gap-1.5">
                 <span
-                  className="font-black text-sm sm:text-base tracking-tight transition-colors"
+                  className="font-extrabold text-sm sm:text-[15px] tracking-tight transition-colors duration-200"
                   style={{ color: 'var(--color-heading-text)' }}
                 >
                   Ahmed Raza
@@ -102,12 +120,30 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                 <span
                   className="w-2 h-2 rounded-full animate-pulse"
                   style={{ backgroundColor: 'var(--color-primary)' }}
-                  title="Open for End-to-End Solutions & Consultations"
                 />
               </div>
-              <span className="text-[10px] font-semibold tracking-wider uppercase" style={{ color: 'var(--color-primary)' }}>
-                Modern Systems &bull; Automation &bull; AI
-              </span>
+              <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold tracking-wide">
+                <span
+                  className="transition-colors duration-200"
+                  style={{ color: 'var(--color-primary)' }}
+                >
+                  Modern Systems
+                </span>
+                <span className="text-slate-500 dark:text-slate-400 opacity-70">•</span>
+                <span
+                  className="transition-colors duration-200"
+                  style={{ color: 'var(--color-primary)' }}
+                >
+                  Automation
+                </span>
+                <span className="text-slate-500 dark:text-slate-400 opacity-70">•</span>
+                <span
+                  className="transition-colors duration-200"
+                  style={{ color: 'var(--color-primary)' }}
+                >
+                  AI
+                </span>
+              </div>
             </div>
           </a>
 

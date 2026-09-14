@@ -11,21 +11,34 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <div
-            className="w-8 h-8 rounded-full p-0.5 shadow-sm"
-            style={{ backgroundColor: 'var(--color-primary)' }}
+            className="w-9 h-9 rounded-full p-[2px] shadow-sm shrink-0"
+            style={{
+              background: 'linear-gradient(135deg, var(--color-primary), #38bdf8)',
+            }}
           >
-            <img
-              src="/assets/logos-circle.png"
-              alt="Ahmed Raza"
-              className="w-full h-full object-cover rounded-full bg-neutral-900"
-              onError={(e) => {
-                (e.target as HTMLElement).style.display = 'none';
-              }}
-            />
+            <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
+              <img
+                src="/assets/banner-01.png"
+                alt="Ahmed Raza"
+                className="w-full h-full object-cover object-[50%_15%]"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              <div
+                className="w-full h-full hidden items-center justify-center font-bold text-xs tracking-wider text-white"
+                style={{ backgroundColor: 'var(--color-primary)' }}
+              >
+                AR
+              </div>
+            </div>
           </div>
           <div>
             <span className="font-bold text-sm text-white">Ahmed Raza</span>
-            <p className="text-xs text-neutral-500">Full Stack Developer &amp; AI Solutions Engineer</p>
+            <p className="text-xs text-neutral-400">Full Stack Developer &amp; AI Solutions Engineer</p>
           </div>
         </div>
 
