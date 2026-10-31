@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
           </div>
           <div>
             <span className="font-bold text-sm text-white">Ahmed Raza</span>
-            <p className="text-xs text-neutral-400">Full Stack Developer &amp; AI Solutions Engineer</p>
+            <p className="text-xs text-neutral-400">AI/ML Engineer, Islamabad</p>
           </div>
         </div>
 
@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
             Experience
           </a>
           <a href="#services" className="hover:text-white transition-colors">
-            Services
+            Skills
           </a>
           <a href="#contact" className="hover:text-white transition-colors">
             Contact
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-3 text-xs text-neutral-500">
-          <span>&copy; {new Date().getFullYear()} Ahmed Raza. All rights reserved.</span>
+          <span>&copy; {new Date().getFullYear()} Ahmed Raza</span>
           {/* Discreet admin lock button */}
           <button
             type="button"

@@ -9,7 +9,6 @@ import { AeoGeoSection } from './components/AeoGeoSection';
 import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { SocialSidebar } from './components/SocialSidebar';
 import { BackToTop } from './components/BackToTop';
 import { PortfolioDataProvider, usePortfolioData } from './context/PortfolioDataContext';
 import { SmoothScrollProvider, useSmoothScroll } from './context/SmoothScrollContext';
@@ -33,7 +32,7 @@ export const AppContent: React.FC = () => {
   }, [isResumeModalOpen, isAdminOpen, stop, start]);
 
   useEffect(() => {
-    const sections = ['home', 'portfolio', 'resume', 'services', 'faq', 'testimonial', 'contact'];
+    const sections = ['home', 'portfolio', 'resume', 'services', 'testimonial', 'faq', 'contact'];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 180;
@@ -80,18 +79,16 @@ export const AppContent: React.FC = () => {
         {/* Specialized Services: Scraping, Automation, AI Agents, Full Stack */}
         <Services />
 
-        {/* AEO / GEO / Fact-sheet for High-Ranking Search & AI Grounding */}
-        <AeoGeoSection />
-
-        {/* Testimonials: Squeezed Horizontal Scroll Row */}
         <Testimonials />
+
+        {/* Visible FAQ (matches the FAQPage structured data in index.html) */}
+        <AeoGeoSection />
 
         {/* Direct Contact: Unified Executive Card with Instant WhatsApp */}
         <Contact />
       </main>
 
       {/* Floating Utilities */}
-      <SocialSidebar />
       <BackToTop />
 
       {/* Footer with Discreet Private Admin Portal Link */}

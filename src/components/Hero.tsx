@@ -65,26 +65,10 @@ export const Hero: React.FC = () => {
           {/* Left Column: Text & Direct CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             {/* Value Proposition Badge */}
-            <div
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6 shadow-xs border transition-all duration-300"
-              style={{
-                backgroundColor: 'var(--color-primary-light)',
-                borderColor: 'var(--color-primary-border)',
-                color: 'var(--color-primary)',
-              }}
-            >
-              <span className="relative flex h-2 w-2">
-                <span
-                  className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
-                  style={{ backgroundColor: 'var(--color-primary)' }}
-                />
-                <span
-                  className="relative inline-flex rounded-full h-2 w-2"
-                  style={{ backgroundColor: 'var(--color-primary)' }}
-                />
-              </span>
-              <span>Available for AI/ML roles &amp; collaborations</span>
-            </div>
+            <p className="mb-6 inline-flex items-center gap-2 text-sm" style={{ color: 'var(--color-body-text)' }}>
+              <span className="h-2 w-2 rounded-full" style={{ backgroundColor: 'var(--color-primary)' }} aria-hidden="true" />
+              Available for AI/ML roles and collaborations
+            </p>
 
             <h1
               className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight"
@@ -137,7 +121,7 @@ export const Hero: React.FC = () => {
                   backgroundColor: 'var(--color-primary)',
                 }}
               >
-                <span>Get in Touch</span>
+                <span>Get in touch</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -152,7 +136,7 @@ export const Hero: React.FC = () => {
                 }}
               >
                 <FolderGit2 className="w-4 h-4" style={{ color: 'var(--color-primary)' }} />
-                <span>View Projects</span>
+                <span>View projects</span>
               </a>
 
               <button
@@ -167,24 +151,8 @@ export const Hero: React.FC = () => {
                 }}
               >
                 <FileText className="w-4 h-4" />
-                <span>View Résumé</span>
+                <span>View résumé</span>
               </button>
-            </div>
-
-            {/* Credibility checkpoints */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 text-xs font-semibold">
-              <div className="flex items-center gap-2" style={{ color: 'var(--color-body-text)' }}>
-                <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: 'var(--color-primary)' }} />
-                <span>32h manual flow cut to 10 mins</span>
-              </div>
-              <div className="flex items-center gap-2" style={{ color: 'var(--color-body-text)' }}>
-                <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: 'var(--color-primary)' }} />
-                <span>3 AI/Security internships</span>
-              </div>
-              <div className="flex items-center gap-2" style={{ color: 'var(--color-body-text)' }}>
-                <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: 'var(--color-primary)' }} />
-                <span>20+ projects delivered</span>
-              </div>
             </div>
           </div>
 
@@ -223,23 +191,14 @@ export const Hero: React.FC = () => {
                   }}
                 >
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-neutral-400 tracking-wider block">
-                      Production Impact
+                    <span className="text-xs text-neutral-400 block">
+                      Askari Bank AI Team
                     </span>
                     <span className="text-xs font-extrabold text-white">
-                      32h manual flow &rarr; 10 mins
+                      32-hour weekly workflow cut to 10 minutes
                     </span>
                   </div>
-                  <span
-                    className="px-2.5 py-1 rounded-lg text-[10px] font-bold border"
-                    style={{
-                      backgroundColor: 'var(--color-primary-light)',
-                      borderColor: 'var(--color-primary-border)',
-                      color: 'var(--color-primary)',
-                    }}
-                  >
-                    Askari Bank
-                  </span>
+
                 </div>
               </div>
             </div>

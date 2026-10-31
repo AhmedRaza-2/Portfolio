@@ -3,6 +3,7 @@ import { ExternalLink, Search, Eye, Flame, MessageSquare, FileSpreadsheet, BarCh
 import { Project } from '../types/portfolio';
 import { ProjectModal } from './ProjectModal';
 import { usePortfolioData } from '../context/PortfolioDataContext';
+import { SectionHeader } from './ui/SectionHeader';
 
 export interface CustomThumbnailInfo {
   src: string;
@@ -139,87 +140,15 @@ export const Portfolio: React.FC = () => {
   return (
     <section
       id="portfolio"
-      aria-label="Portfolio & Featured Projects"
-      className="py-16 sm:py-20 transition-colors duration-300"
-      style={{
-        backgroundColor: 'var(--color-page-bg)',
-      }}
+      aria-labelledby="portfolio-title"
+      className="py-20 sm:py-24"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span
-            className="text-xs sm:text-sm font-bold uppercase tracking-widest"
-            style={{ color: 'var(--color-primary)' }}
-          >
-            Production Engineering &amp; Client Deployments
-          </span>
-          <h2
-            className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight"
-            style={{ color: 'var(--color-heading-text)' }}
-          >
-            Featured Projects &amp; Systems
-          </h2>
-          <p className="mt-2 text-sm text-neutral-400">
-            Engineered for high reliability: Bank regulatory automation, AI knowledge systems, Flutter applications, and cybersecurity engines.
-          </p>
-        </div>
-
-        {/* Filter Tabs & Search Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-            {categories.map((cat) => {
-              const isActive = activeCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
-                    isActive
-                      ? 'text-white shadow-xs font-bold'
-                      : 'border opacity-75 hover:opacity-100'
-                  }`}
-                  style={{
-                    backgroundColor: isActive ? 'var(--color-primary)' : 'var(--color-card-bg)',
-                    borderColor: 'var(--color-border-subtle)',
-                    color: isActive ? '#ffffff' : 'var(--color-heading-text)',
-                  }}
-                >
-                  {cat}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Search Input */}
-          <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-            <input
-              id="portfolio-search-input"
-              type="text"
-              placeholder="Filter by tech or keyword..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-xs rounded-full border focus:outline-none transition-colors"
-              style={{
-                backgroundColor: 'var(--color-card-bg)',
-                borderColor: 'var(--color-border-subtle)',
-                color: 'var(--color-heading-text)',
-              }}
-            />
-            {searchQuery && (
-              <button
-                type="button"
-                onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-neutral-400 hover:text-neutral-200 cursor-pointer"
-              >
-                Clear
-              </button>
-            )}
-          </div>
-        </div>
+        <SectionHeader
+          id="portfolio-title"
+          title="Projects"
+          description="Selected work from internships, university and freelance projects."
+        />
 
         {/* Projects Grid */}
         {filteredProjects.length === 0 ? (
@@ -276,97 +205,15 @@ export const Portfolio: React.FC = () => {
                         }
                       }}
                     />
-
-                    {/* Category Pill Tag */}
-                    <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5">
-                      <span
-                        className="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-md shadow-xs border"
-                        style={{
-                          backgroundColor: 'var(--color-primary-light)',
-                          color: 'var(--color-primary)',
-                          borderColor: 'var(--color-primary-border)',
-                        }}
-                      >
-                        {project.category}
-                      </span>
-                    </div>
-
-                    {/* Dynamic Custom Thumbnail Type Badge */}
-                    {customThumb.badgeLabel && (
-                      <div className="absolute bottom-3 right-3 z-10">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wide bg-neutral-950/90 text-neutral-200 border border-neutral-700/80 backdrop-blur-md shadow-sm">
-                          {customThumb.badgeType === 'invoice' && <FileSpreadsheet className="w-3.5 h-3.5 text-amber-400" />}
-                          {customThumb.badgeType === 'dashboard' && <BarChart3 className="w-3.5 h-3.5 text-emerald-400" />}
-                          {customThumb.badgeType === 'waveform' && <Activity className="w-3.5 h-3.5 text-purple-400" />}
-                          {customThumb.badgeType === 'security' && <ShieldCheck className="w-3.5 h-3.5 text-rose-400" />}
-                          {customThumb.badgeType === 'resume' && <FileText className="w-3.5 h-3.5 text-sky-400" />}
-                          {customThumb.badgeType === 'web' && <Globe className="w-3.5 h-3.5 text-amber-400" />}
-                          {customThumb.badgeType === 'chatbot' && <Bot className="w-3.5 h-3.5 text-violet-400" />}
-                          {customThumb.badgeType === 'bot' && <Cpu className="w-3.5 h-3.5 text-blue-400" />}
-                          {customThumb.badgeType === 'charity' && <Heart className="w-3.5 h-3.5 text-emerald-400" />}
-                          <span>{customThumb.badgeLabel}</span>
-                        </span>
-                      </div>
-                    )}
-
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-neutral-950/80 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 gap-2">
-                      <button
-                        type="button"
-                        onClick={() => setSelectedProject(project)}
-                        className="px-3 py-2 rounded-lg text-xs font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/20 flex items-center gap-1.5 transition-colors cursor-pointer"
-                      >
-                        <Eye className="w-3.5 h-3.5" />
-                        <span>Case Study</span>
-                      </button>
-
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-3 py-2 rounded-lg text-xs font-semibold text-white flex items-center gap-1.5 shadow-sm transition-opacity hover:opacity-90 cursor-pointer"
-                          style={{
-                            backgroundColor: 'var(--color-primary)',
-                          }}
-                        >
-                          <ExternalLink className="w-3.5 h-3.5" />
-                          <span>Live Site</span>
-                        </a>
-                      )}
-
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-3 py-2 rounded-lg text-xs font-semibold text-white bg-neutral-800 hover:bg-neutral-700 flex items-center gap-1.5 shadow-sm transition-colors cursor-pointer"
-                        >
-                          <GithubIcon className="w-3.5 h-3.5" />
-                          <span>GitHub</span>
-                        </a>
-                      )}
-                    </div>
                   </div>
 
                 {/* Project Metadata & Content */}
                 <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    {/* Metrics Badge if present */}
                     {project.metrics && (
-                      <div className="mb-2">
-                        <span
-                          className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold border"
-                          style={{
-                            backgroundColor: 'var(--color-primary-light)',
-                            color: 'var(--color-primary)',
-                            borderColor: 'var(--color-primary-border)',
-                          }}
-                        >
-                          <Flame className="w-3 h-3" style={{ color: 'var(--color-accent)' }} />
-                          <span>{project.metrics}</span>
-                        </span>
-                      </div>
+                      <p className="mb-2 text-xs font-medium" style={{ color: 'var(--color-primary)' }}>
+                        {project.metrics}
+                      </p>
                     )}
 
                     <h3
@@ -392,8 +239,7 @@ export const Portfolio: React.FC = () => {
                         className="text-xs font-bold transition-opacity hover:opacity-80 cursor-pointer flex items-center gap-1"
                         style={{ color: 'var(--color-primary)' }}
                       >
-                        <span>Full Breakdown</span>
-                        <span>&rarr;</span>
+                        <span>Read more</span>
                       </button>
 
                       <div className="flex items-center gap-3">

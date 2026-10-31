@@ -30,11 +30,10 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   }, []);
 
   const navItems = [
-    { label: 'PROJECTS', href: '#portfolio' },
-    { label: 'EXPERIENCE', href: '#resume' },
-    { label: 'SERVICES', href: '#services' },
-    { label: 'FEEDBACK', href: '#testimonial' },
-    { label: 'CONTACT', href: '#contact' },
+    { label: 'Projects', href: '#portfolio' },
+    { label: 'Experience', href: '#resume' },
+    { label: 'Skills', href: '#services' },
+    { label: 'FAQ', href: '#faq' },
   ];
 
   return (
@@ -151,7 +150,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                   key={item.href}
                   id={`nav-${item.label.toLowerCase().replace(/[^a-z0-9]/g, '')}`}
                   href={item.href}
-                  className={`px-3 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-200 ${
+                  className={`px-3 py-1.5 text-sm font-medium rounded-full transition-all duration-200 ${
                     isActive
                       ? 'text-slate-900 font-bold shadow-xs'
                       : 'hover:text-white'
@@ -170,24 +169,23 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
             <button
               type="button"
               onClick={openResumeModal}
-              className="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-full transition-colors cursor-pointer hover:bg-white/5"
+              className="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-full transition-colors cursor-pointer hover:bg-white/5"
               style={{ color: '#c8d8e4' }}
             >
               <FileText className="w-3.5 h-3.5" style={{ color: 'var(--color-primary)' }} />
-              <span>RESUME</span>
+              <span>Résumé</span>
             </button>
 
             {/* Contact / Consultation CTA */}
             <a
               id="nav-contact-btn"
               href="#contact"
-              className="ml-1 inline-flex items-center gap-1 px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 cursor-pointer text-slate-950"
+              className="ml-1 inline-flex items-center px-4 py-1.5 text-sm font-semibold rounded-full transition-opacity hover:opacity-90 cursor-pointer text-slate-950"
               style={{
                 backgroundColor: 'var(--color-primary)',
               }}
             >
-              <span>GET IN TOUCH</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <span>Contact</span>
             </a>
           </nav>
 
@@ -267,7 +265,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                   id={`mobile-nav-${item.label.toLowerCase().replace(/[^a-z0-9]/g, '')}`}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-2.5 rounded-xl text-sm font-semibold tracking-wide uppercase transition-colors ${
+                  className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                     activeSection === item.href.substring(1) ? 'text-slate-900 font-bold' : ''
                   }`}
                   style={{
@@ -285,7 +283,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                   setMobileMenuOpen(false);
                   openResumeModal();
                 }}
-                className="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold tracking-wide uppercase border"
+                className="w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium border"
                 style={{
                   backgroundColor: 'var(--color-card-bg)',
                   borderColor: 'var(--color-border-subtle)',
@@ -299,10 +297,10 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                 id="mobile-nav-contact"
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 text-center px-4 py-2.5 rounded-xl text-sm font-bold tracking-wide uppercase text-slate-950 shadow-md"
+                className="mt-2 text-center px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-950"
                 style={{ backgroundColor: 'var(--color-primary)' }}
               >
-                CONTACT AHMED
+                Contact
               </a>
             </div>
           </div>

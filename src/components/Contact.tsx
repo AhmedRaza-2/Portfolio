@@ -1,297 +1,167 @@
 import React, { useState } from 'react';
-import { Mail, Send, Check, Copy, ExternalLink, Phone, MessageSquare, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Check, Copy, MessageCircle, MapPin } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './ui/BrandIcons';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { SectionHeader } from './ui/SectionHeader';
+
+const inputClass =
+  'w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-colors focus:border-[var(--color-primary)] focus-visible:ring-2 focus-visible:ring-[var(--color-primary-border)]';
+const inputStyle: React.CSSProperties = {
+  backgroundColor: 'var(--color-subtle-bg)',
+  borderColor: 'var(--color-border-subtle)',
+  color: 'var(--color-heading-text)',
+};
 
 export const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [sent, setSent] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  const handleCopyEmail = () => {
+  const copyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2500);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-
-    const mailtoUrl = `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(
-      formData.subject || `Project Inquiry from ${formData.name}`
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-
-    window.location.href = mailtoUrl;
-    setSubmitted(true);
+    if (!form.name || !form.email || !form.message) return;
+    const subject = encodeURIComponent(`Message from ${form.name} via ahmed-raza.dev`);
+    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
+    window.location.href = `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
+    setSent(true);
   };
 
-  const whatsappUrl = `https://wa.me/923345216102?text=${encodeURIComponent(
-    'Hello Ahmed, I reviewed your portfolio and would like to discuss a project / role opportunity.'
-  )}`;
+  const links = [
+    { icon: LinkedinIcon, label: 'LinkedIn', value: 'in/ahmed-r-43b6a1266', href: PERSONAL_INFO.linkedin },
+    { icon: GithubIcon, label: 'GitHub', value: 'AhmedRaza-2', href: PERSONAL_INFO.github },
+    {
+      icon: MessageCircle,
+      label: 'WhatsApp',
+      value: PERSONAL_INFO.phone,
+      href: 'https://wa.me/923345216102',
+    },
+  ];
 
   return (
     <section
       id="contact"
-      aria-label="Direct Contact & Inquiries"
-      className="py-16 sm:py-20 transition-colors duration-300 relative overflow-hidden"
-      style={{
-        backgroundColor: 'var(--color-page-bg)',
-      }}
+      aria-labelledby="contact-title"
+      className="py-20 sm:py-24 border-t"
+      style={{ borderColor: 'var(--color-border-subtle)' }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <span
-            className="text-xs sm:text-sm font-bold uppercase tracking-widest px-3.5 py-1 rounded-full border inline-block mb-3"
-            style={{
-              backgroundColor: 'var(--color-primary-light)',
-              borderColor: 'var(--color-primary-border)',
-              color: 'var(--color-primary)',
-            }}
-          >
-            Contact
-          </span>
-          <h2
-            className="text-3xl sm:text-4xl font-extrabold tracking-tight"
-            style={{ color: 'var(--color-heading-text)' }}
-          >
-            Let&apos;s Connect
-          </h2>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed" style={{ color: 'var(--color-body-text)' }}>
-            Whether you&apos;re hiring for an AI/ML or software engineering role, building a team, or have a project in mind, I&apos;m happy to talk. I usually reply within a day.
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Left: how to reach me */}
+          <div>
+            <SectionHeader
+              id="contact-title"
+              title="Contact"
+              description="Hiring for an AI/ML or software role, or have a project in mind? Email is the fastest way to reach me."
+            />
 
-        {/* Unified Executive Contact Box */}
-        <div
-          className="rounded-3xl border shadow-xl p-6 sm:p-10 transition-all duration-300 max-w-5xl mx-auto"
-          style={{
-            backgroundColor: 'var(--color-card-bg)',
-            borderColor: 'var(--color-border-subtle)',
-          }}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left side: Direct Channels & Fast Actions (5 cols) */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="border-b pb-4" style={{ borderColor: 'var(--color-border-subtle)' }}>
-                <h3
-                  className="text-lg font-bold"
-                  style={{ color: 'var(--color-heading-text)' }}
-                >
-                  Direct Communication
-                </h3>
-                <p className="text-xs text-neutral-400 mt-1">
-                  Connect immediately through your preferred platform.
-                </p>
-              </div>
-
-              {/* WhatsApp Work CTA (Prominent) */}
+            <div className="flex items-center gap-2">
               <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 transition-all duration-200 group cursor-pointer"
+                href={`mailto:${PERSONAL_INFO.email}`}
+                className="inline-flex items-center gap-2 text-base sm:text-lg font-semibold underline-offset-4 hover:underline break-all"
+                style={{ color: 'var(--color-heading-text)' }}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-md">
-                    <MessageSquare className="w-5 h-5 fill-current" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-300 block">
-                      Instant Messaging
-                    </span>
-                    <span className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">
-                      Chat on WhatsApp (+92 334 5216102)
-                    </span>
-                  </div>
-                </div>
-                <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+                <Mail className="h-5 w-5 shrink-0" style={{ color: 'var(--color-primary)' }} aria-hidden="true" />
+                {PERSONAL_INFO.email}
               </a>
-
-              {/* LinkedIn Work Profile */}
-              <a
-                href={PERSONAL_INFO.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-400 transition-all duration-200 group cursor-pointer"
+              <button
+                type="button"
+                onClick={copyEmail}
+                aria-label={copied ? 'Email copied' : 'Copy email address'}
+                className="rounded-lg p-2 transition-colors hover:bg-white/5"
+                style={{ color: 'var(--color-body-text)' }}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-md">
-                    <ExternalLink className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-300 block">
-                      Professional Network
-                    </span>
-                    <span className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors">
-                      Connect on LinkedIn
-                    </span>
-                  </div>
-                </div>
-                <ArrowRight className="w-4 h-4 text-blue-400 group-hover:translate-x-1 transition-transform" />
-              </a>
-
-              {/* Email Direct & Copy */}
-              <div
-                className="p-4 rounded-xl border flex items-center justify-between gap-3"
-                style={{
-                  backgroundColor: 'var(--color-subtle-bg)',
-                  borderColor: 'var(--color-border-subtle)',
-                }}
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <div
-                    className="w-10 h-10 rounded-lg text-white flex items-center justify-center shrink-0 shadow-xs"
-                    style={{ backgroundColor: 'var(--color-primary)' }}
-                  >
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div className="min-w-0">
-                    <span className="text-xs text-neutral-400 block">Direct Email</span>
-                    <a
-                      href={`mailto:${PERSONAL_INFO.email}`}
-                      className="text-xs sm:text-sm font-bold truncate block hover:underline"
-                      style={{ color: 'var(--color-heading-text)' }}
-                    >
-                      {PERSONAL_INFO.email}
-                    </a>
-                  </div>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={handleCopyEmail}
-                  className="p-2 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-300 transition-colors shrink-0 cursor-pointer"
-                  title="Copy email"
-                >
-                  {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                </button>
-              </div>
-
-              {/* Location & Status */}
-              <div className="flex items-center justify-between text-xs text-neutral-400 px-1 pt-1">
-                <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-neutral-500" />
-                  Islamabad, PK (UTC+5)
-                </span>
-                <span className="flex items-center gap-1.5 font-semibold text-emerald-400">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  Open for Opportunities
-                </span>
-              </div>
+                {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+              </button>
             </div>
 
-            {/* Right side: Compact Quick Message Composer (7 cols) */}
-            <div className="lg:col-span-7">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-xs font-semibold text-neutral-400 block mb-1">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Jane Doe"
-                      className="w-full px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm transition-colors focus:outline-none focus:ring-1"
-                      style={{
-                        backgroundColor: 'var(--color-subtle-bg)',
-                        borderColor: 'var(--color-border-subtle)',
-                        color: 'var(--color-heading-text)',
-                      }}
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-xs font-semibold text-neutral-400 block mb-1">
-                      Your Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="jane@company.com"
-                      className="w-full px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm transition-colors focus:outline-none focus:ring-1"
-                      style={{
-                        backgroundColor: 'var(--color-subtle-bg)',
-                        borderColor: 'var(--color-border-subtle)',
-                        color: 'var(--color-heading-text)',
-                      }}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-xs font-semibold text-neutral-400 block mb-1">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="AI Automation Project / Full Stack Role"
-                    className="w-full px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm transition-colors focus:outline-none focus:ring-1"
-                    style={{
-                      backgroundColor: 'var(--color-subtle-bg)',
-                      borderColor: 'var(--color-border-subtle)',
-                      color: 'var(--color-heading-text)',
-                    }}
-                  />
-                </div>
-
-                <div>
-                  <label className="text-xs font-semibold text-neutral-400 block mb-1">
-                    Your Message *
-                  </label>
-                  <textarea
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell me about your project scope, goals, or timeline..."
-                    className="w-full px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm transition-colors focus:outline-none focus:ring-1 resize-none"
-                    style={{
-                      backgroundColor: 'var(--color-subtle-bg)',
-                      borderColor: 'var(--color-border-subtle)',
-                      color: 'var(--color-heading-text)',
-                    }}
-                  />
-                </div>
-
-                <div className="flex items-center justify-end pt-1">
-                  <button
-                    type="submit"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-950 transition-all shadow-md hover:opacity-90 cursor-pointer"
-                    style={{
-                      backgroundColor: 'var(--color-primary)',
-                    }}
+            <ul className="mt-6 space-y-3">
+              {links.map(({ icon: Icon, label, value, href }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-3 text-sm"
+                    style={{ color: 'var(--color-body-text)' }}
                   >
-                    {submitted ? (
-                      <>
-                        <Check className="w-4 h-4 text-white" />
-                        <span>Email Prepared!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4" />
-                        <span>Send Message</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-              </form>
-            </div>
+                    <Icon className="h-4 w-4" style={{ color: 'var(--color-primary)' }} aria-hidden="true" />
+                    <span className="w-20 opacity-70">{label}</span>
+                    <span className="group-hover:underline underline-offset-4" style={{ color: 'var(--color-heading-text)' }}>
+                      {value}
+                    </span>
+                  </a>
+                </li>
+              ))}
+              <li className="inline-flex items-center gap-3 text-sm" style={{ color: 'var(--color-body-text)' }}>
+                <MapPin className="h-4 w-4" style={{ color: 'var(--color-primary)' }} aria-hidden="true" />
+                <span className="w-20 opacity-70">Location</span>
+                <span style={{ color: 'var(--color-heading-text)' }}>Islamabad, Pakistan (UTC+5)</span>
+              </li>
+            </ul>
           </div>
+
+          {/* Right: short form */}
+          <form onSubmit={handleSubmit} className="space-y-4 lg:pt-2" aria-label="Send a message">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label className="block">
+                <span className="mb-1.5 block text-sm" style={{ color: 'var(--color-body-text)' }}>Name</span>
+                <input
+                  required
+                  name="name"
+                  autoComplete="name"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  className={inputClass}
+                  style={inputStyle}
+                />
+              </label>
+              <label className="block">
+                <span className="mb-1.5 block text-sm" style={{ color: 'var(--color-body-text)' }}>Email</span>
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className={inputClass}
+                  style={inputStyle}
+                />
+              </label>
+            </div>
+            <label className="block">
+              <span className="mb-1.5 block text-sm" style={{ color: 'var(--color-body-text)' }}>Message</span>
+              <textarea
+                required
+                name="message"
+                rows={4}
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className={`${inputClass} resize-none`}
+                style={inputStyle}
+              />
+            </label>
+            <div className="flex flex-wrap items-center gap-4">
+              <button
+                type="submit"
+                className="rounded-full px-6 py-2.5 text-sm font-semibold transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2"
+                style={{ backgroundColor: 'var(--color-primary)', color: 'var(--color-page-bg)' }}
+              >
+                Send message
+              </button>
+              {sent && (
+                <span className="text-sm" style={{ color: 'var(--color-body-text)' }} role="status">
+                  Your email app should open with the message ready to send.
+                </span>
+              )}
+            </div>
+          </form>
         </div>
       </div>
     </section>
