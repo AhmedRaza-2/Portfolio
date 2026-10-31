@@ -15,18 +15,19 @@ export const getCustomProjectThumbnail = (project: Project): CustomThumbnailInfo
   const id = (project.id || '').toLowerCase();
 
   // 1. Self-generated custom graphical diagrams based on project idea for specialized enterprise/banking workflows
-  if (id.includes('regulatory') || t.includes('regulatory') || t.includes('askari')) {
-    return {
-      src: '/project-screenshots/regulatory-dashboard.svg',
-      badgeLabel: 'Regulatory Scraping (Askari)',
-      badgeType: 'dashboard',
-    };
-  }
+  // TradeOps is checked first: its title also mentions "Askari Bank"
   if (id.includes('tradeops') || t.includes('tradeops') || t.includes('invoice')) {
     return {
       src: '/project-screenshots/tradeops-invoice.svg',
       badgeLabel: 'TradeOps Invoice Extraction',
       badgeType: 'invoice',
+    };
+  }
+  if (id.includes('regulatory') || t.includes('regulatory')) {
+    return {
+      src: '/project-screenshots/regulatory-dashboard.svg',
+      badgeLabel: 'Regulatory Scraping (Askari)',
+      badgeType: 'dashboard',
     };
   }
   if (id.includes('voice-sentiment') || id.includes('sentiment') || t.includes('voice call sentiment') || t.includes('call tone')) {
@@ -40,63 +41,63 @@ export const getCustomProjectThumbnail = (project: Project): CustomThumbnailInfo
   // 2. Real project screenshots for the rest of the projects
   if (id.includes('noble-islam') || t.includes('noble islam')) {
     return {
-      src: '/project-screenshots/thenobleislam.png',
+      src: '/project-screenshots/thenobleislam.webp',
       badgeLabel: 'The Noble Islam Live',
       badgeType: 'web',
     };
   }
   if (id.includes('noble') || t.includes('noble')) {
     return {
-      src: '/project-screenshots/nobleplatforms.png',
+      src: '/project-screenshots/nobleplatforms.webp',
       badgeLabel: 'Noble Platforms Agency',
       badgeType: 'web',
     };
   }
   if (id.includes('resumify') || t.includes('resumify')) {
     return {
-      src: '/project-screenshots/portfolio-02.jpg',
+      src: '/project-screenshots/portfolio-02.webp',
       badgeLabel: 'ATS AI Resume Builder',
       badgeType: 'resume',
     };
   }
   if (id.includes('aegis') || t.includes('aegis') || t.includes('phishing')) {
     return {
-      src: '/project-screenshots/portfolio-07.png',
+      src: '/project-screenshots/portfolio-07.webp',
       badgeLabel: 'Outlook Phishing Classifier',
       badgeType: 'security',
     };
   }
   if (id.includes('aura') || t.includes('aura') || t.includes('inara') || t.includes('customer support')) {
     return {
-      src: '/project-screenshots/portfolio-09.png',
+      src: '/project-screenshots/portfolio-09.webp',
       badgeLabel: 'URL-to-Chatbot Generator',
       badgeType: 'chatbot',
     };
   }
   if (id.includes('file-encryption') || id.includes('encryption')) {
     return {
-      src: '/project-screenshots/portfolio-06.png',
+      src: '/project-screenshots/portfolio-06.webp',
       badgeLabel: 'National CERT Encryption',
       badgeType: 'security',
     };
   }
   if (id.includes('automation-bot') || id.includes('bot') || t.includes('automation bot') || t.includes('selenium')) {
     return {
-      src: '/project-screenshots/portfolio-08.png',
+      src: '/project-screenshots/portfolio-08.webp',
       badgeLabel: 'Selenium Automation Bot',
       badgeType: 'bot',
     };
   }
   if (id.includes('goodness') || t.includes('goodness') || t.includes('sout ul khair')) {
     return {
-      src: '/project-screenshots/portfolio-01.png',
+      src: '/project-screenshots/portfolio-01.webp',
       badgeLabel: 'Welfare Charity Platform',
       badgeType: 'charity',
     };
   }
 
   return {
-    src: project.image || '/project-screenshots/thenobleislam.png',
+    src: project.image || '/project-screenshots/thenobleislam.webp',
     badgeLabel: 'Client Deployment',
     badgeType: 'web',
   };
@@ -262,12 +263,16 @@ export const Portfolio: React.FC = () => {
                   <div className="relative h-52 sm:h-56 overflow-hidden bg-neutral-950">
                     <img
                       src={customThumb.src}
-                      alt={project.title}
+                      alt={`${project.title} — project by Ahmed Raza`}
+                      loading="lazy"
+                      decoding="async"
+                      width={640}
+                      height={400}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        if (!target.src.includes('thenobleislam.png')) {
-                          target.src = '/project-screenshots/thenobleislam.png';
+                        if (!target.src.includes('thenobleislam.webp')) {
+                          target.src = '/project-screenshots/thenobleislam.webp';
                         }
                       }}
                     />

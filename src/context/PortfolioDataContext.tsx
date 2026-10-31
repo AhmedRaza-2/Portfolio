@@ -53,7 +53,7 @@ export const PortfolioDataProvider: React.FC<{ children: React.ReactNode }> = ({
             // Ensure any outdated asset paths are upgraded to the current high-res SVGs
             return parsed.map((p: Project) => {
               const defaultMatch = DEFAULT_PROJECTS.find((dp) => dp.id === p.id);
-              if (defaultMatch && (!p.image || p.image.startsWith('/assets/') || p.image.endsWith('.png'))) {
+              if (defaultMatch && (!p.image || p.image.startsWith('/assets/') || p.image.endsWith('.png') || p.image.endsWith('.jpg'))) {
                 return { ...p, image: defaultMatch.image };
               }
               return p;

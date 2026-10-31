@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, FolderGit2, Mail, CheckCircle2, FileText, MessageSquare } from 'lucide-react';
+import { ArrowRight, FolderGit2, CheckCircle2, FileText } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { usePortfolioData } from '../context/PortfolioDataContext';
 
 export const Hero: React.FC = () => {
   const { openResumeModal } = usePortfolioData();
   const words = [
-    'Saving You Time & Money.',
-    'Modernizing Legacy Workflows.',
-    'Taking MVPs to Production.',
-    'Automating Heavy Manual Tasks.',
+    'AI that ships to production.',
+    '32-hour workflows → 10 minutes.',
+    'RAG agents & LLM apps.',
+    'MVP to production, end-to-end.',
   ];
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -41,10 +41,6 @@ export const Hero: React.FC = () => {
 
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, currentWordIndex, typingSpeed]);
-
-  const whatsappUrl = `https://wa.me/923345216102?text=${encodeURIComponent(
-    'Hello Ahmed, I am looking to upgrade my current system / save time & money with modern solutions. Let\'s schedule a free consultation.'
-  )}`;
 
   return (
     <section
@@ -87,7 +83,7 @@ export const Hero: React.FC = () => {
                   style={{ backgroundColor: 'var(--color-primary)' }}
                 />
               </span>
-              <span>Need to Save Time &amp; Money? Let's Upgrade Your System</span>
+              <span>Available for AI/ML roles &amp; collaborations</span>
             </div>
 
             <h1
@@ -95,9 +91,10 @@ export const Hero: React.FC = () => {
               style={{ color: 'var(--color-heading-text)' }}
             >
               Hi, I'm <span style={{ color: 'var(--color-primary)' }}>{PERSONAL_INFO.name}</span>
+              <span className="sr-only"> — AI/ML Engineer in Islamabad, Pakistan. </span>
               <br />
               <span
-                className="block mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold min-h-[44px] sm:min-h-[48px]"
+                className="block mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold min-h-[64px] sm:min-h-[48px]"
                 style={{ color: 'var(--color-primary)' }}
               >
                 {displayText}
@@ -109,13 +106,13 @@ export const Hero: React.FC = () => {
             </h1>
 
             <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-2xl font-normal opacity-90" style={{ color: 'var(--color-body-text)' }}>
-              Are you facing workflow bottlenecks, looking to upgrade your existing software, or need to save valuable team hours and operational costs? I help businesses and founders build high-impact modern solutions end-to-end — from rapid MVP to resilient production. Contact me for a free consultation and live interactive demos.
+              AI/ML Engineer and CS undergraduate at Air University, Islamabad. I&apos;ve shipped real AI systems at the <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>Askari Bank AI Team</strong>, <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>INARA Technologies</strong> and <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>National CERT Pakistan</strong> — including a regulatory-monitoring pipeline that cut <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>32 hours of weekly manual work to ~10 minutes</strong> across 50,000+ documents. I work end-to-end — Python, LLMs, RAG, React and Flutter — from first prototype to production.
             </p>
 
             {/* Quick Skills Pills */}
             <div className="mt-5 flex flex-wrap gap-2 items-center">
-              <span className="text-xs font-bold mr-1 opacity-70" style={{ color: 'var(--color-body-text)' }}>Core Solutions:</span>
-              {['End-to-End MVP to Production', 'Workflow Automation & Scraping', 'AI Agents & RAG', 'React & Next.js Platforms', 'Cross-Platform Flutter', 'System Modernization'].map((tag) => (
+              <span className="text-xs font-bold mr-1 opacity-70" style={{ color: 'var(--color-body-text)' }}>Focus:</span>
+              {['Generative AI & LLMs', 'RAG Pipelines & AI Agents', 'Python Automation', 'NLP & Machine Learning', 'React / Next.js', 'Flutter'].map((tag) => (
                 <span
                   key={tag}
                   className="px-2.5 py-1 text-xs font-semibold rounded-lg border transition-all duration-200 hover:scale-105"
@@ -140,7 +137,7 @@ export const Hero: React.FC = () => {
                   backgroundColor: 'var(--color-primary)',
                 }}
               >
-                <span>Free Consultation &amp; Demos</span>
+                <span>Get in Touch</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -155,14 +152,13 @@ export const Hero: React.FC = () => {
                 }}
               >
                 <FolderGit2 className="w-4 h-4" style={{ color: 'var(--color-primary)' }} />
-                <span>Explore Real Case Studies</span>
+                <span>View Projects</span>
               </a>
 
-              <a
-                id="hero-whatsapp-cta"
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                id="hero-resume-cta"
+                type="button"
+                onClick={openResumeModal}
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-bold border shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
                 style={{
                   backgroundColor: 'var(--color-primary-light)',
@@ -170,24 +166,24 @@ export const Hero: React.FC = () => {
                   color: 'var(--color-primary)',
                 }}
               >
-                <MessageSquare className="w-4 h-4" />
-                <span>Instant Chat</span>
-              </a>
+                <FileText className="w-4 h-4" />
+                <span>View Résumé</span>
+              </button>
             </div>
 
             {/* Credibility checkpoints */}
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-semibold">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 text-xs font-semibold">
               <div className="flex items-center gap-2" style={{ color: 'var(--color-body-text)' }}>
                 <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: 'var(--color-primary)' }} />
                 <span>32h manual flow cut to 10 mins</span>
               </div>
               <div className="flex items-center gap-2" style={{ color: 'var(--color-body-text)' }}>
                 <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: 'var(--color-primary)' }} />
-                <span>Trusted Freelance Track Record</span>
+                <span>3 AI/Security internships</span>
               </div>
               <div className="flex items-center gap-2" style={{ color: 'var(--color-body-text)' }}>
                 <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: 'var(--color-primary)' }} />
-                <span>Free Consultations &amp; Demos</span>
+                <span>20+ projects delivered</span>
               </div>
             </div>
           </div>
@@ -203,13 +199,17 @@ export const Hero: React.FC = () => {
                 }}
               >
                 <img
-                  src="/assets/banner-01.png"
-                  alt="Ahmed Raza - Full Stack Developer and AI Solutions Engineer"
+                  src="/assets/ahmed-raza.webp"
+                  alt="Portrait of Ahmed Raza, AI/ML Engineer based in Islamabad, Pakistan"
+                  width={800}
+                  height={800}
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-auto object-cover rounded-2xl group-hover:scale-[1.01] transition-transform duration-300"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    if (!target.src.includes('banner.png')) {
-                      target.src = '/assets/banner.png';
+                    if (!target.src.includes('banner-01.png')) {
+                      target.src = '/assets/banner-01.png';
                     }
                   }}
                 />

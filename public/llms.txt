@@ -15,9 +15,9 @@
 - GitHub: https://github.com/AhmedRaza-2
 
 ## Professional Experience
-- **Askari Bank AI Team (Internship):** Built an enterprise automated regulatory-monitoring system that scrapes and reviews 80-100+ banking compliance portals and 50,000+ documents, reducing 32 hours of weekly manual auditing to ~10 minutes.
-- **INARA Technologies (Lead AI Developer):** Developed RAG-powered conversational customer assistants (Aura AI) with dynamic URL scraping, vector embeddings, and real-time response pipelines.
-- **National CERT Pakistan:** Conducted web application vulnerability assessments and threat classification on critical national assets.
+- **Askari Bank AI Team (AI Intern, Jun–Aug 2026):** Built an enterprise automated regulatory-monitoring system that scrapes and reviews 80-100+ banking compliance portals and 50,000+ documents, reducing 32 hours of weekly manual auditing to ~10 minutes.
+- **INARA Technologies (AI Intern, Jul–Sep 2025):** Developed RAG-powered conversational customer assistants (Aura AI) with dynamic URL scraping, vector embeddings, and real-time response pipelines.
+- **National CERT Pakistan (DevSecOps Intern, Jul–Sep 2024):** Conducted web application vulnerability assessments and threat classification on critical national assets.
 
 ## Production Projects & Case Studies
 - **AEGIS-ONE — AI-Based Phishing Prevention System:** Multi-modal machine learning and NLP detection engine protecting users against phishing URLs, spoofed emails, and malicious links with real-time risk scoring and browser quarantine. (URL: https://ahmed-raza.dev/projects/aegis-one/)

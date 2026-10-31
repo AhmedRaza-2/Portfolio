@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Core SEO & Identity -->
-    <title>Ahmed Raza | AI/ML Developer | Generative AI &amp; AI Automation</title>
-    <meta name="description" content="Ahmed Raza is an AI/ML Developer and Computer Science undergraduate building Generative AI, LLM, RAG, NLP, and AI automation solutions in Islamabad, Pakistan." />
+    <title>Ahmed Raza — AI/ML Engineer | Generative AI, RAG &amp; Automation | Islamabad</title>
+    <meta name="description" content="Ahmed Raza is an AI/ML Engineer in Islamabad, Pakistan building Generative AI, LLM, RAG and automation systems. Askari Bank AI Team, INARA Technologies and National CERT alumnus; cut a 32-hour weekly workflow to 10 minutes." />
     <meta name="keywords" content="Ahmed Raza, AI/ML Developer, Generative AI, LLM Applications, RAG, AI Automation, NLP, Python, Software Engineering, Cybersecurity, Askari Bank, INARA Technologies, National CERT, Air University, Islamabad Pakistan" />
     <meta name="author" content="Ahmed Raza" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -17,34 +17,40 @@
     <meta name="geo.placename" content="Islamabad" />
     <meta name="geo.position" content="33.6844;73.0479" />
     <meta name="ICBM" content="33.6844, 73.0479" />
-    <meta name="coverage" content="Worldwide" />
-    <meta name="distribution" content="Global" />
-    <meta name="target_country" content="pk, us, gb, ca, de, ae, sa" />
 
     <!-- Favicon & Icons -->
-    <link rel="icon" type="image/png" href="/assets/logos-circle.png" />
-    <link rel="apple-touch-icon" href="/assets/logos-circle.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Performance: load the hero portrait first (LCP image) -->
+    <link rel="preload" as="image" href="/assets/ahmed-raza.webp" type="image/webp" fetchpriority="high" />
 
     <!-- Open Graph / Social Media (Facebook, LinkedIn, Discord) -->
     <meta property="og:type" content="profile" />
-    <meta property="og:title" content="Ahmed Raza | AI/ML Developer | Generative AI &amp; AI Automation" />
-    <meta property="og:description" content="Ahmed Raza is an AI/ML Developer and Computer Science undergraduate building Generative AI, LLM, RAG, NLP, and AI automation solutions in Islamabad, Pakistan." />
-    <meta property="og:image" content="/assets/banner-01.png" />
+    <meta property="og:title" content="Ahmed Raza — AI/ML Engineer | Generative AI, RAG &amp; Automation" />
+    <meta property="og:description" content="Ahmed Raza is an AI/ML Engineer in Islamabad, Pakistan building Generative AI, LLM, RAG and automation systems. Askari Bank AI Team, INARA Technologies and National CERT alumnus; cut a 32-hour weekly workflow to 10 minutes." />
+    <meta property="og:image" content="https://ahmed-raza.dev/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ahmed Raza — AI/ML Engineer, Islamabad, Pakistan" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://ahmed-raza.dev/" />
-    <meta property="og:site_name" content="Ahmed Raza — AI/ML Developer &amp; AI Solutions" />
+    <meta property="og:site_name" content="Ahmed Raza" />
     <meta property="profile:first_name" content="Ahmed" />
     <meta property="profile:last_name" content="Raza" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ahmed Raza | AI/ML Developer | Generative AI &amp; AI Automation" />
-    <meta name="twitter:description" content="Ahmed Raza is an AI/ML Developer and Computer Science undergraduate building Generative AI, LLM, RAG, NLP, and AI automation solutions in Islamabad, Pakistan." />
-    <meta name="twitter:image" content="/assets/banner-01.png" />
+    <meta name="twitter:title" content="Ahmed Raza — AI/ML Engineer | Generative AI, RAG &amp; Automation" />
+    <meta name="twitter:description" content="Ahmed Raza is an AI/ML Engineer in Islamabad, Pakistan building Generative AI, LLM, RAG and automation systems. Askari Bank AI Team, INARA Technologies and National CERT alumnus; cut a 32-hour weekly workflow to 10 minutes." />
+    <meta name="twitter:image" content="https://ahmed-raza.dev/assets/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Ahmed Raza — AI/ML Engineer, Islamabad, Pakistan" />
 
     <!-- Theme & Display -->
-    <meta name="theme-color" content="#10b981" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="theme-color" content="#0e1e24" />
+    <meta name="color-scheme" content="dark" />
 
     <!-- Structured Data (JSON-LD) for SEO, AEO (Answer Engine Optimization) & Knowledge Graph -->
     <script type="application/ld+json">
@@ -55,13 +61,15 @@
           "@type": "ProfilePage",
           "@id": "https://ahmed-raza.dev/#profilepage",
           "url": "https://ahmed-raza.dev/",
-          "name": "Ahmed Raza | AI/ML Developer | Generative AI & AI Automation",
+          "name": "Ahmed Raza — AI/ML Engineer | Generative AI, RAG & Automation",
+          "dateModified": "2026-10-31",
           "isPartOf": {
             "@type": "WebSite",
             "@id": "https://ahmed-raza.dev/#website",
             "url": "https://ahmed-raza.dev/",
             "name": "Ahmed Raza — AI/ML Developer Portfolio",
-            "inLanguage": "en-US"
+            "inLanguage": "en-US",
+            "publisher": { "@id": "https://ahmed-raza.dev/#ahmedraza" }
           },
           "about": {
             "@id": "https://ahmed-raza.dev/#ahmedraza"
@@ -76,15 +84,19 @@
           "name": "Ahmed Raza",
           "givenName": "Ahmed",
           "familyName": "Raza",
-          "jobTitle": [
-            "AI/ML Developer",
-            "Generative AI & AI Automation Engineer",
-            "Full Stack Developer & AI Solutions Engineer",
-            "End-to-End Systems Architect"
-          ],
+          "alternateName": "Ahmed R.",
+          "jobTitle": "AI/ML Engineer",
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "AI/ML Engineer",
+            "occupationLocation": { "@type": "City", "name": "Islamabad, Pakistan" },
+            "skills": "Generative AI, Large Language Models, Retrieval-Augmented Generation, NLP, Machine Learning, Python, Workflow Automation, React, Flutter"
+          },
+          "nationality": { "@type": "Country", "name": "Pakistan" },
           "description": "Ahmed Raza is an AI/ML Developer and Computer Science undergraduate at Air University Islamabad building Generative AI, LLM, RAG, NLP, and AI automation solutions in Islamabad, Pakistan.",
-          "url": "https://ahmed-raza.dev",
-          "email": "araza2125012.pgc@gmail.com",
+          "url": "https://ahmed-raza.dev/",
+          "mainEntityOfPage": "https://ahmed-raza.dev/",
+          "email": "mailto:araza2125012.pgc@gmail.com",
           "telephone": "+92 334 5216102",
           "address": {
             "@type": "PostalAddress",
@@ -92,31 +104,46 @@
             "addressRegion": "Federal Capital Territory",
             "addressCountry": "PK"
           },
-          "image": "https://ahmed-raza.dev/assets/banner-01.png",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://ahmed-raza.dev/assets/ahmed-raza.webp",
+            "width": 800,
+            "height": 800,
+            "caption": "Ahmed Raza"
+          },
           "alumniOf": [
             {
               "@type": "CollegeOrUniversity",
-              "name": "Air University Islamabad"
+              "name": "Air University Islamabad",
+              "url": "https://www.au.edu.pk/"
             },
             {
               "@type": "EducationalOrganization",
               "name": "Punjab College of Science"
             }
           ],
-          "worksFor": [
+          "affiliation": [
             {
               "@type": "Organization",
-              "name": "Askari Bank AI Team"
+              "name": "Askari Bank",
+              "description": "Artificial Intelligence Intern, AI Team (Jun 2026 – Aug 2026)"
             },
             {
               "@type": "Organization",
-              "name": "INARA Technologies"
+              "name": "INARA Technologies",
+              "description": "Artificial Intelligence Intern (Jul 2025 – Sep 2025)"
             },
             {
               "@type": "Organization",
-              "name": "National CERT Pakistan"
+              "name": "National CERT Pakistan",
+              "description": "DevSecOps Intern (Jul 2024 – Sep 2024)"
             }
           ],
+          "hasCredential": [
+            { "@type": "EducationalOccupationalCredential", "name": "Python for Data Science & AI", "recognizedBy": { "@type": "Organization", "name": "IBM" } },
+            { "@type": "EducationalOccupationalCredential", "name": "Foundations of AI and Machine Learning", "recognizedBy": { "@type": "Organization", "name": "Microsoft" } }
+          ],
+          "award": ["Vyrothon 2026 AI Hackathon Finalist (AI/ML Track)"],
           "sameAs": [
             "https://www.linkedin.com/in/ahmed-r-43b6a1266/",
             "https://github.com/AhmedRaza-2",
@@ -134,10 +161,6 @@
             "Python",
             "Software Engineering",
             "Cybersecurity",
-            "Askari Bank AI Automation",
-            "INARA Technologies",
-            "National CERT Pakistan",
-            "Air University Islamabad",
             "React.js",
             "Next.js",
             "TypeScript",

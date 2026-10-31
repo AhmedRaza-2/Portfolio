@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -11,10 +11,12 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { SocialSidebar } from './components/SocialSidebar';
 import { BackToTop } from './components/BackToTop';
-import { AdminModal } from './components/AdminModal';
-import { ResumeModal } from './components/ResumeModal';
 import { PortfolioDataProvider, usePortfolioData } from './context/PortfolioDataContext';
 import { SmoothScrollProvider, useSmoothScroll } from './context/SmoothScrollContext';
+
+// Modals are only needed on demand, so keep them out of the initial bundle
+const AdminModal = lazy(() => import('./components/AdminModal').then((m) => ({ default: m.AdminModal })));
+const ResumeModal = lazy(() => import('./components/ResumeModal').then((m) => ({ default: m.ResumeModal })));
 
 export const AppContent: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -96,10 +98,18 @@ export const AppContent: React.FC = () => {
       <Footer />
 
       {/* Verified Resume Modal (ATS View & Print/Download PDF) */}
-      <ResumeModal />
+      {isResumeModalOpen && (
+        <Suspense fallback={null}>
+          <ResumeModal />
+        </Suspense>
+      )}
 
       {/* Private Password-Protected Dynamic Admin Panel */}
-      <AdminModal />
+      {isAdminOpen && (
+        <Suspense fallback={null}>
+          <AdminModal />
+        </Suspense>
+      )}
 
       {/* Vercel Web Analytics */}
       <Analytics />

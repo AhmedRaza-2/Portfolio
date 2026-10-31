@@ -79,7 +79,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <div className="w-full h-64 sm:h-72 rounded-xl overflow-hidden bg-neutral-950 border border-neutral-800 relative">
                 <img
                   src={customThumb.src}
-                  alt={project.title}
+                  alt={`${project.title} — project by Ahmed Raza`}
+                  decoding="async"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;

@@ -88,7 +88,10 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
               >
                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
                   <img
-                    src="/assets/banner-01.png"
+                    src="/assets/ahmed-raza-avatar.webp"
+                    width={40}
+                    height={40}
+                    decoding="async"
                     alt="Ahmed Raza"
                     className="w-full h-full object-cover object-[50%_15%] group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
@@ -122,28 +125,12 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                   style={{ backgroundColor: 'var(--color-primary)' }}
                 />
               </div>
-              <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold tracking-wide">
-                <span
-                  className="transition-colors duration-200"
-                  style={{ color: 'var(--color-primary)' }}
-                >
-                  Modern Systems
-                </span>
-                <span className="text-slate-500 dark:text-slate-400 opacity-70">•</span>
-                <span
-                  className="transition-colors duration-200"
-                  style={{ color: 'var(--color-primary)' }}
-                >
-                  Automation
-                </span>
-                <span className="text-slate-500 dark:text-slate-400 opacity-70">•</span>
-                <span
-                  className="transition-colors duration-200"
-                  style={{ color: 'var(--color-primary)' }}
-                >
-                  AI
-                </span>
-              </div>
+              <span
+                className="block text-[11px] font-semibold tracking-wide whitespace-nowrap"
+                style={{ color: 'var(--color-primary)' }}
+              >
+                AI/ML Engineer
+              </span>
             </div>
           </a>
 
@@ -199,7 +186,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                 backgroundColor: 'var(--color-primary)',
               }}
             >
-              <span>FREE CONSULTATION</span>
+              <span>GET IN TOUCH</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </nav>
@@ -211,7 +198,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
               className="px-3 py-1.5 text-xs font-bold rounded-full text-slate-950 font-bold shadow-xs"
               style={{ backgroundColor: 'var(--color-primary)' }}
             >
-              Free Consultation
+              Contact
             </a>
 
             <button
@@ -237,14 +224,6 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
 
           {/* Mobile Small Buttons */}
           <div className="flex sm:hidden items-center gap-2">
-            <a
-              href="#contact"
-              className="px-2.5 py-1 text-xs font-bold rounded-lg cursor-pointer text-slate-950"
-              style={{ backgroundColor: 'var(--color-primary)' }}
-            >
-              Consult
-            </a>
-
             <button
               type="button"
               onClick={openResumeModal}
@@ -255,7 +234,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                 color: 'var(--color-heading-text)',
               }}
             >
-              CV
+              Résumé
             </button>
 
             <button
@@ -323,7 +302,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                 className="mt-2 text-center px-4 py-2.5 rounded-xl text-sm font-bold tracking-wide uppercase text-slate-950 shadow-md"
                 style={{ backgroundColor: 'var(--color-primary)' }}
               >
-                GET FREE CONSULTATION &amp; DEMOS
+                CONTACT AHMED
               </a>
             </div>
           </div>

@@ -18,7 +18,10 @@ export const Footer: React.FC = () => {
           >
             <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
               <img
-                src="/assets/banner-01.png"
+                src="/assets/ahmed-raza-avatar.webp"
+                width={40}
+                height={40}
+                decoding="async"
                 alt="Ahmed Raza"
                 className="w-full h-full object-cover object-[50%_15%]"
                 onError={(e) => {

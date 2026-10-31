@@ -95,16 +95,16 @@ export const Services: React.FC = () => {
               color: 'var(--color-primary)',
             }}
           >
-            Direct Commercial Value &amp; Freelance Delivery
+            What I Do
           </span>
           <h2
             className="text-3xl sm:text-4xl font-extrabold tracking-tight"
             style={{ color: 'var(--color-heading-text)' }}
           >
-            Modern Engineering That Saves Time &amp; Money
+            AI, Automation &amp; Full-Stack Engineering
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed" style={{ color: 'var(--color-body-text)' }}>
-            Serving clients globally across long-term engagements, enterprise automations, and custom MVP launches. Every service focuses on measurable business outcomes, zero fluff, and production-ready code.
+            The areas I work in day to day — in internships, university research and freelance projects. Each one is backed by shipped work you can see in the projects above.
           </p>
         </div>
 
@@ -182,7 +182,7 @@ export const Services: React.FC = () => {
               }}
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between gap-3 mb-4">
                   <div
                     className="w-10 h-10 rounded-xl border flex items-center justify-center group-hover:scale-105 transition-transform"
                     style={{
@@ -193,7 +193,7 @@ export const Services: React.FC = () => {
                     {item.icon}
                   </div>
                   <span
-                    className="text-[10px] font-bold px-2 py-0.5 rounded-md border"
+                    className="text-[10px] font-bold px-2 py-0.5 rounded-md border text-right leading-snug min-w-0"
                     style={{
                       backgroundColor: 'var(--color-primary-light)',
                       borderColor: 'var(--color-primary-border)',
@@ -244,7 +244,7 @@ export const Services: React.FC = () => {
                   className="inline-flex items-center gap-1 text-xs font-bold transition-all group-hover:translate-x-1 cursor-pointer"
                   style={{ color: 'var(--color-primary)' }}
                 >
-                  <span>Free Demo &amp; Consultation</span>
+                  <span>Discuss a project</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>

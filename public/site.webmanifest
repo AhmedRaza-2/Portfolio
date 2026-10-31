@@ -1,0 +1,13 @@
+{
+  "name": "Ahmed Raza — AI/ML Engineer",
+  "short_name": "Ahmed Raza",
+  "description": "Portfolio of Ahmed Raza, AI/ML Engineer in Islamabad, Pakistan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e1e24",
+  "theme_color": "#0e1e24",
+  "icons": [
+    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

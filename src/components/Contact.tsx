@@ -56,16 +56,16 @@ export const Contact: React.FC = () => {
               color: 'var(--color-primary)',
             }}
           >
-            Free Consultation &amp; Live Demos
+            Contact
           </span>
           <h2
             className="text-3xl sm:text-4xl font-extrabold tracking-tight"
             style={{ color: 'var(--color-heading-text)' }}
           >
-            Need an Upgrade or Looking to Save Time &amp; Money?
+            Let&apos;s Connect
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed" style={{ color: 'var(--color-body-text)' }}>
-            Facing bottlenecks in your current workflow or ready to launch an MVP into high-scale production? Let's build your modern end-to-end solution. Reach out for a complimentary architecture review, timeline estimate, and live demo.
+            Whether you&apos;re hiring for an AI/ML or software engineering role, building a team, or have a project in mind, I&apos;m happy to talk. I usually reply within a day.
           </p>
         </div>
 

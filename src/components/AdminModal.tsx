@@ -39,7 +39,7 @@ export const AdminModal: React.FC = () => {
     description: '',
     techStack: [],
     metrics: '',
-    image: '/assets/portfolio-01.png',
+    image: '/project-screenshots/portfolio-01.webp',
     liveUrl: '',
     githubUrl: '',
     featured: true,
@@ -83,7 +83,7 @@ export const AdminModal: React.FC = () => {
         title: projectForm.title || 'Untitled Project',
         category: (projectForm.category as any) || 'AI & ML',
         description: projectForm.description || '',
-        image: projectForm.image || '/assets/portfolio-01.png',
+        image: projectForm.image || '/project-screenshots/portfolio-01.webp',
         techStack: stack.length > 0 ? stack : ['Python', 'TypeScript'],
         metrics: projectForm.metrics || undefined,
         liveUrl: projectForm.liveUrl || undefined,
@@ -100,7 +100,7 @@ export const AdminModal: React.FC = () => {
       description: '',
       techStack: [],
       metrics: '',
-      image: '/assets/portfolio-01.png',
+      image: '/project-screenshots/portfolio-01.webp',
       liveUrl: '',
       githubUrl: '',
       featured: true,
@@ -281,7 +281,7 @@ export const AdminModal: React.FC = () => {
                               description: '',
                               techStack: [],
                               metrics: '',
-                              image: '/assets/portfolio-01.png',
+                              image: '/project-screenshots/portfolio-01.webp',
                               liveUrl: '',
                               githubUrl: '',
                               featured: true,
@@ -456,7 +456,7 @@ export const AdminModal: React.FC = () => {
                               alt=""
                               className="w-10 h-10 rounded-lg object-cover bg-neutral-800 shrink-0"
                               onError={(e) => {
-                                (e.target as HTMLImageElement).src = '/assets/portfolio-01.png';
+                                (e.target as HTMLImageElement).src = '/project-screenshots/portfolio-01.webp';
                               }}
                             />
                             <div className="min-w-0">
