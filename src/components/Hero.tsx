@@ -90,7 +90,7 @@ export const Hero: React.FC = () => {
             </h1>
 
             <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-2xl font-normal opacity-90" style={{ color: 'var(--color-body-text)' }}>
-              AI/ML Engineer and CS undergraduate at Air University, Islamabad. I&apos;ve shipped real AI systems at the <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>Askari Bank AI Team</strong>, <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>INARA Technologies</strong> and <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>National CERT Pakistan</strong> — including a regulatory-monitoring pipeline that cut <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>32 hours of weekly manual work to ~10 minutes</strong> across 50,000+ documents. I work end-to-end — Python, LLMs, RAG, React and Flutter — from first prototype to production.
+              AI/ML Engineer and CS undergraduate at Air University, Islamabad, currently a <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>Product Engineer at The Noble Platforms</strong>. Previously I interned at the <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>Askari Bank AI Team</strong>, where I helped cut a <strong className="font-semibold" style={{ color: 'var(--color-heading-text)' }}>32-hour weekly workflow to ~10 minutes</strong>, and at INARA Technologies and National CERT. I work end-to-end — Python, LLMs, RAG, React and Flutter.
             </p>
 
             {/* Quick Skills Pills */}

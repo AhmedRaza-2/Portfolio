@@ -38,7 +38,7 @@ export const Resume: React.FC = () => {
         <SectionHeader
           id="resume-title"
           title="Experience"
-          description="Internships, education, skills and certifications."
+          description="Work, education, skills and certifications."
           action={
             <button
               type="button"

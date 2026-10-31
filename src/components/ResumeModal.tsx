@@ -143,7 +143,7 @@ CERTIFICATIONS & HONORS
               Professional Summary
             </h3>
             <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed text-justify">
-              Results-oriented Full Stack Developer &amp; AI Solutions Engineer with hands-on experience developing and deploying production LLM-powered applications, workflow automations, and secure web &amp; mobile systems. Proven track record cutting high-volume bank compliance audits from 32 hours to 10 minutes at Askari Bank AI team, implementing RAG chatbots at INARA Tech, and actively maintaining 500+ contributions on GitHub.
+              AI/ML Engineer and Computer Science student at Air University, Islamabad, currently working as a Product Engineer at The Noble Platforms. At the Askari Bank AI Team, helped cut a 32-hour weekly compliance workflow to about 10 minutes; at INARA Technologies, built RAG chatbots and LLM workflows. 500+ GitHub contributions in the past year.
             </p>
           </section>
 

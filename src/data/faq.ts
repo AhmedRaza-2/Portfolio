@@ -9,7 +9,7 @@ export const FAQ: FaqItem[] = [
   {
     question: 'Who is Ahmed Raza?',
     answer:
-      'Ahmed Raza is an AI/ML Engineer and BS Computer Science student at Air University, Islamabad, Pakistan. He builds Generative AI, LLM, RAG and automation systems, and has interned with the Askari Bank AI Team, INARA Technologies and National CERT Pakistan.',
+      'Ahmed Raza is an AI/ML Engineer and BS Computer Science student at Air University, Islamabad, Pakistan. He is currently a Product Engineer at The Noble Platforms, an Air University AUBIC startup, and has interned with the Askari Bank AI Team, INARA Technologies and National CERT Pakistan. He builds Generative AI, LLM, RAG and automation systems.',
   },
   {
     question: 'Which university does Ahmed Raza attend?',
@@ -19,7 +19,7 @@ export const FAQ: FaqItem[] = [
   {
     question: 'What has Ahmed Raza built?',
     answer:
-      'At the Askari Bank AI Team he automated regulatory monitoring across 80–100+ websites and 50,000+ documents, cutting a 32-hour weekly workflow to about 10 minutes, and built invoice data extraction (~40 fields into SQL) and call-sentiment classification. Other work includes Aura AI, a RAG customer-support agent at INARA Technologies; AegisOne, a machine-learning phishing detector for Outlook; and Resumify, a Flutter AI résumé builder.',
+      'At The Noble Platforms he builds the startup’s websites, backend services and AI chatbots end-to-end. At the Askari Bank AI Team he automated regulatory monitoring across 80–100+ websites and 50,000+ documents, cutting a 32-hour weekly workflow to about 10 minutes, and built invoice data extraction (~40 fields into SQL) and call-sentiment classification. Other work includes Aura AI, a RAG customer-support agent at INARA Technologies; AegisOne, a machine-learning phishing detector for Outlook; and Resumify, a Flutter AI résumé builder.',
   },
   {
     question: "What is Ahmed Raza's tech stack?",

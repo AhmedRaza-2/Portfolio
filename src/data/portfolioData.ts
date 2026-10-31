@@ -13,7 +13,7 @@ export const PERSONAL_INFO = {
   name: 'Ahmed Raza',
   title: 'Full Stack Developer & AI Solutions Engineer',
   tagline: 'Building production-ready AI solutions, automation tools, and scalable web apps.',
-  bio: 'AI-focused Computer Science undergraduate with hands-on experience building LLM-powered applications. Strong background in building production-ready AI solutions, automation tools, and cybersecurity-focused applications. Active contributor to the tech community with 500+ GitHub Contributions last year and participation in competitive Hackathons.',
+  bio: 'AI-focused Computer Science undergraduate and Product Engineer at The Noble Platforms, with hands-on experience building LLM-powered applications. Strong background in building production-ready AI solutions, automation tools, and cybersecurity-focused applications. Active contributor to the tech community with 500+ GitHub Contributions last year and participation in competitive Hackathons.',
   location: 'Islamabad, PK',
   phone: '+92 334 5216102',
   email: 'araza2125012.pgc@gmail.com',
@@ -283,6 +283,19 @@ export const EDUCATION: TimelineItem[] = [
 ];
 
 export const EXPERIENCE: TimelineItem[] = [
+  {
+    id: 'exp-noble-platforms',
+    title: 'Product Engineer',
+    organization: 'The Noble Platforms (Air University AUBIC startup), Islamabad',
+    period: 'Jun 2026 – Present · Full-time, hybrid',
+    description: 'Building the startup’s products end-to-end, from websites to AI-powered chatbots.',
+    badge: 'Startup',
+    bullets: [
+      'Developing end-to-end web solutions for the startup, from landing pages and websites to AI-powered chatbots.',
+      'Designing and managing databases and backend services, and handling a wide range of full-stack development tasks.',
+      'Joined as a Full Stack Intern (Mar – May 2026) and moved into a full-time Product Engineer role.',
+    ],
+  },
   {
     id: 'exp-askari-bank',
     title: 'Artificial Intelligence Intern',
