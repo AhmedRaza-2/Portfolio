@@ -13,8 +13,73 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { SKILL_CATEGORIES, CERTIFICATIONS } from '../data/portfolioData';
+import type { TimelineItem } from '../types/portfolio';
 import { usePortfolioData } from '../context/PortfolioDataContext';
 import { SectionHeader } from './ui/SectionHeader';
+
+/** Vertical timeline: date on the left (desktop), a rail with dots, and the role on the right. */
+const Timeline: React.FC<{ items: TimelineItem[] }> = ({ items }) => (
+  <ol className="relative max-w-4xl">
+    {items.map((item, i) => {
+      const isCurrent = /present/i.test(item.period);
+      const isLast = i === items.length - 1;
+      return (
+        <li key={item.id} className="relative grid grid-cols-[20px_1fr] md:grid-cols-[180px_20px_1fr] gap-x-4 md:gap-x-6">
+          {/* Date (desktop) */}
+          <p
+            className="hidden md:block pt-0.5 text-right text-sm"
+            style={{ color: isCurrent ? 'var(--color-primary)' : 'var(--color-body-text)', opacity: isCurrent ? 1 : 0.75 }}
+          >
+            {item.period}
+          </p>
+
+          {/* Rail + dot */}
+          <div className="relative flex justify-center" aria-hidden="true">
+            {!isLast && (
+              <span className="absolute top-3 bottom-0 w-px" style={{ backgroundColor: 'var(--color-border-subtle)' }} />
+            )}
+            <span
+              className="relative mt-1.5 h-3 w-3 rounded-full border-2"
+              style={{
+                borderColor: 'var(--color-primary)',
+                backgroundColor: isCurrent ? 'var(--color-primary)' : 'var(--color-page-bg)',
+                boxShadow: isCurrent ? '0 0 0 4px var(--color-primary-light)' : undefined,
+              }}
+            />
+          </div>
+
+          {/* Content */}
+          <div className={isLast ? 'pb-0' : 'pb-10'}>
+            <h3 className="text-lg font-semibold leading-snug" style={{ color: 'var(--color-heading-text)' }}>
+              {item.title}
+            </h3>
+            <p className="mt-0.5 text-sm font-medium" style={{ color: 'var(--color-primary)' }}>
+              {item.organization}
+            </p>
+            <p className="md:hidden mt-1 text-xs" style={{ color: 'var(--color-body-text)', opacity: 0.75 }}>
+              {item.period}
+            </p>
+            {item.bullets && item.bullets.length > 0 ? (
+              <ul className="mt-3 space-y-1.5">
+                {item.bullets.map((bullet, idx) => (
+                  <li key={idx} className="flex gap-2.5 text-[15px] leading-relaxed" style={{ color: 'var(--color-body-text)' }}>
+                    <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full" style={{ backgroundColor: 'var(--color-primary)' }} />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-3 text-[15px] leading-relaxed" style={{ color: 'var(--color-body-text)' }}>
+                {item.description}
+                {item.grade ? ` ${item.grade}.` : ''}
+              </p>
+            )}
+          </div>
+        </li>
+      );
+    })}
+  </ol>
+);
 
 export const Resume: React.FC = () => {
   const { experience, education, openResumeModal } = usePortfolioData();
@@ -87,105 +152,10 @@ export const Resume: React.FC = () => {
 
         {/* Tab Panes */}
         {/* Experience Tab */}
-        {activeTab === 'experience' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {experience.map((item) => (
-              <article
-                key={item.id}
-                className="p-6 rounded-2xl border flex flex-col justify-between transition-all hover:border-neutral-600"
-                style={{
-                  backgroundColor: 'var(--color-card-bg)',
-                  borderColor: 'var(--color-border-subtle)',
-                }}
-              >
-                <div>
-                  <div className="flex items-start justify-between gap-3 mb-2 flex-wrap">
-                    <div>
-                      <h3 className="text-base sm:text-lg font-bold" style={{ color: 'var(--color-heading-text)' }}>
-                        {item.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
-                        {item.organization}
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="text-xs mb-3" style={{ color: 'var(--color-body-text)', opacity: 0.7 }}>
-                    {item.period}
-                  </p>
-
-                  {item.bullets && item.bullets.length > 0 ? (
-                    <ul className="space-y-2">
-                      {item.bullets.map((bullet, idx) => (
-                        <li key={idx} className="text-sm leading-relaxed flex items-start gap-2.5" style={{ color: 'var(--color-body-text)' }}>
-                          <span className="w-1 h-1 rounded-full mt-2.5 shrink-0" style={{ backgroundColor: 'var(--color-primary)' }} />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-sm leading-relaxed" style={{ color: 'var(--color-body-text)' }}>
-                      {item.description}
-                    </p>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
+        {activeTab === 'experience' && <Timeline items={experience} />}
 
         {/* Education Tab */}
-        {activeTab === 'education' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {education.map((item) => (
-              <article
-                key={item.id}
-                className="p-6 rounded-2xl border flex flex-col justify-between"
-                style={{
-                  backgroundColor: 'var(--color-card-bg)',
-                  borderColor: 'var(--color-border-subtle)',
-                }}
-              >
-                <div>
-                  <div className="flex items-start justify-between gap-3 mb-2 flex-wrap">
-                    <div>
-                      <h3 className="text-base sm:text-lg font-bold" style={{ color: 'var(--color-heading-text)' }}>
-                        {item.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
-                        {item.organization}
-                      </p>
-                    </div>
-                    {item.grade && (
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold border" style={{ backgroundColor: 'var(--color-primary-light)', color: 'var(--color-primary)', borderColor: 'var(--color-primary-border)' }}>
-                        {item.grade}
-                      </span>
-                    )}
-                  </div>
-
-                  <p className="text-xs mb-3" style={{ color: 'var(--color-body-text)', opacity: 0.7 }}>
-                    {item.period}
-                  </p>
-
-                  {item.bullets && item.bullets.length > 0 ? (
-                    <ul className="space-y-2">
-                      {item.bullets.map((bullet, idx) => (
-                        <li key={idx} className="text-sm leading-relaxed flex items-start gap-2.5" style={{ color: 'var(--color-body-text)' }}>
-                          <span className="w-1 h-1 rounded-full mt-2.5 shrink-0" style={{ backgroundColor: 'var(--color-primary)' }} />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-sm leading-relaxed" style={{ color: 'var(--color-body-text)' }}>
-                      {item.description}
-                    </p>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
+        {activeTab === 'education' && <Timeline items={education} />}
 
         {/* Skills Tab */}
         {activeTab === 'skills' && (

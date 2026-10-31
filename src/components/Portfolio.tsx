@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ExternalLink, Search, Eye, Flame, MessageSquare, FileSpreadsheet, BarChart3, Activity, ShieldCheck, FileText, Globe, Bot, Cpu, Heart } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Project } from '../types/portfolio';
 import { ProjectModal } from './ProjectModal';
 import { usePortfolioData } from '../context/PortfolioDataContext';
@@ -110,181 +110,155 @@ const GithubIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' })
   </svg>
 );
 
+// The strongest work leads; everything else goes in the compact list below.
+const FEATURED_IDS = ['regulatory-monitoring', 'aura-ai', 'aegisone-phishing', 'the-noble-islam'];
+
+const ProjectLinks: React.FC<{ project: Project }> = ({ project }) => (
+  <div className="flex items-center gap-3">
+    {project.githubUrl && (
+      <a
+        href={project.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-opacity hover:opacity-70"
+        style={{ color: 'var(--color-body-text)' }}
+        aria-label={`${project.title} source code on GitHub`}
+      >
+        <GithubIcon className="h-4 w-4" />
+      </a>
+    )}
+    {project.liveUrl && (
+      <a
+        href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-opacity hover:opacity-70"
+        style={{ color: 'var(--color-body-text)' }}
+        aria-label={`${project.title} live demo`}
+      >
+        <ExternalLink className="h-4 w-4" />
+      </a>
+    )}
+  </div>
+);
+
 export const Portfolio: React.FC = () => {
   const { projects } = usePortfolioData();
-  const [activeCategory, setActiveCategory] = useState<string>('All');
-  const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const categories = ['All', 'AI & ML', 'AI & Web', 'Enterprise Automation', 'Mobile Application', 'Web Development', 'Desktop & Tools'];
-
-  const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
-      const matchesCategory =
-        activeCategory === 'All' ||
-        project.category === activeCategory ||
-        (activeCategory === 'AI & ML' && (project.category === 'AI & Web' || project.category === 'Enterprise Automation'));
-
-      const matchesSearch =
-        searchQuery === '' ||
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.techStack.some((tech) =>
-          tech.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-
-      return matchesCategory && matchesSearch;
-    });
-  }, [projects, activeCategory, searchQuery]);
+  const { featured, others } = useMemo(() => {
+    const featured = FEATURED_IDS.map((id) => projects.find((p) => p.id === id)).filter(
+      (p): p is Project => Boolean(p)
+    );
+    const others = projects.filter((p) => !FEATURED_IDS.includes(p.id));
+    return { featured, others };
+  }, [projects]);
 
   return (
-    <section
-      id="portfolio"
-      aria-labelledby="portfolio-title"
-      className="py-20 sm:py-24"
-    >
+    <section id="portfolio" aria-labelledby="portfolio-title" className="py-20 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           id="portfolio-title"
           title="Projects"
-          description="Selected work from internships, university and freelance projects."
+          description="Selected work from my roles, internships and university."
         />
 
-        {/* Projects Grid */}
-        {filteredProjects.length === 0 ? (
-          <div
-            className="text-center py-16 rounded-2xl border border-dashed"
-            style={{
-              backgroundColor: 'var(--color-card-bg)',
-              borderColor: 'var(--color-border-subtle)',
-            }}
-          >
-            <p className="text-neutral-400 font-medium text-sm">
-              No projects found matching "{searchQuery}" in {activeCategory}.
-            </p>
-            <button
-              type="button"
-              onClick={() => {
-                setActiveCategory('All');
-                setSearchQuery('');
-              }}
-              className="mt-3 px-4 py-1.5 text-xs font-semibold cursor-pointer underline"
-              style={{ color: 'var(--color-primary)' }}
-            >
-              Reset Filters
-            </button>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {filteredProjects.map((project) => {
-              const customThumb = getCustomProjectThumbnail(project);
-              return (
-                <article
-                  key={project.id}
-                  id={`project-card-${project.id}`}
-                  className="group rounded-2xl border overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
-                  style={{
-                    backgroundColor: 'var(--color-card-bg)',
-                    borderColor: 'var(--color-border-subtle)',
-                  }}
+        {/* Featured: large image cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {featured.map((project) => {
+            const thumb = getCustomProjectThumbnail(project);
+            return (
+              <article
+                key={project.id}
+                className="group flex flex-col overflow-hidden rounded-2xl border transition-colors hover:border-[var(--color-primary-border)]"
+                style={{ backgroundColor: 'var(--color-card-bg)', borderColor: 'var(--color-border-subtle)' }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setSelectedProject(project)}
+                  className="block aspect-[16/9] overflow-hidden bg-neutral-950 text-left"
+                  aria-label={`Open details for ${project.title}`}
                 >
-                  {/* Project Thumbnail & Quick Action Overlay */}
-                  <div className="relative h-52 sm:h-56 overflow-hidden bg-neutral-950">
-                    <img
-                      src={customThumb.src}
-                      alt={`${project.title} — project by Ahmed Raza`}
-                      loading="lazy"
-                      decoding="async"
-                      width={640}
-                      height={400}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        if (!target.src.includes('thenobleislam.webp')) {
-                          target.src = '/project-screenshots/thenobleislam.webp';
-                        }
-                      }}
-                    />
-                  </div>
-
-                {/* Project Metadata & Content */}
-                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    {project.metrics && (
-                      <p className="mb-2 text-xs font-medium" style={{ color: 'var(--color-primary)' }}>
-                        {project.metrics}
-                      </p>
-                    )}
-
-                    <h3
-                      className="text-base sm:text-lg font-bold mb-2 transition-colors leading-snug"
-                      style={{ color: 'var(--color-heading-text)' }}
-                    >
-                      {project.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-neutral-400 line-clamp-2 mb-4 leading-relaxed">
-                      {project.description}
+                  <img
+                    src={thumb.src}
+                    alt={`${project.title} — project by Ahmed Raza`}
+                    loading="lazy"
+                    decoding="async"
+                    width={800}
+                    height={450}
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </button>
+                <div className="flex flex-1 flex-col p-6">
+                  {project.metrics && (
+                    <p className="text-sm font-medium" style={{ color: 'var(--color-primary)' }}>
+                      {project.metrics}
                     </p>
-                  </div>
-
-                  <div>
-                    {/* Bottom Action Bar */}
-                    <div
-                      className="pt-3 border-t flex items-center justify-between"
-                      style={{ borderColor: 'var(--color-border-subtle)' }}
+                  )}
+                  <h3 className="mt-2 text-xl font-semibold leading-snug" style={{ color: 'var(--color-heading-text)' }}>
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-relaxed" style={{ color: 'var(--color-body-text)' }}>
+                    {project.description}
+                  </p>
+                  <p className="mt-4 text-xs opacity-70" style={{ color: 'var(--color-body-text)' }}>
+                    {project.techStack.slice(0, 5).join(' · ')}
+                  </p>
+                  <div className="mt-auto flex items-center justify-between pt-5">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProject(project)}
+                      className="text-sm font-semibold transition-opacity hover:opacity-80"
+                      style={{ color: 'var(--color-primary)' }}
                     >
-                      <button
-                        type="button"
-                        onClick={() => setSelectedProject(project)}
-                        className="text-xs font-bold transition-opacity hover:opacity-80 cursor-pointer flex items-center gap-1"
-                        style={{ color: 'var(--color-primary)' }}
-                      >
-                        <span>Read more</span>
-                      </button>
-
-                      <div className="flex items-center gap-3">
-                        {/* Only render GitHub link if present */}
-                        {project.githubUrl && (
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-neutral-400 hover:text-white transition-colors"
-                            aria-label={`${project.title} GitHub repository`}
-                            title="View GitHub Repository"
-                          >
-                            <GithubIcon className="w-4 h-4" />
-                          </a>
-                        )}
-                        {project.liveUrl && (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="transition-colors hover:opacity-80"
-                            style={{ color: 'var(--color-primary)' }}
-                            aria-label={`${project.title} Live Demonstration`}
-                            title="View Live Demonstration"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
+                      Read case study
+                    </button>
+                    <ProjectLinks project={project} />
                   </div>
                 </div>
               </article>
             );
           })}
-          </div>
+        </div>
+
+        {/* More projects: compact list */}
+        {others.length > 0 && (
+          <>
+            <h3 className="mt-16 mb-6 text-lg font-semibold" style={{ color: 'var(--color-heading-text)' }}>
+              More projects
+            </h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {others.map((project) => (
+                <li
+                  key={project.id}
+                  className="flex flex-col rounded-2xl border p-5 transition-colors hover:border-[var(--color-primary-border)]"
+                  style={{ backgroundColor: 'var(--color-card-bg)', borderColor: 'var(--color-border-subtle)' }}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProject(project)}
+                      className="text-left text-base font-semibold leading-snug hover:underline underline-offset-4"
+                      style={{ color: 'var(--color-heading-text)' }}
+                    >
+                      {project.title}
+                    </button>
+                    <ProjectLinks project={project} />
+                  </div>
+                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed" style={{ color: 'var(--color-body-text)' }}>
+                    {project.description}
+                  </p>
+                  <p className="mt-auto pt-3 text-xs opacity-70" style={{ color: 'var(--color-body-text)' }}>
+                    {project.techStack.slice(0, 4).join(' · ')}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </div>
 
-      {/* Project Details Modal */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </section>
   );
 };

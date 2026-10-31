@@ -7,7 +7,7 @@ import { SectionHeader } from './ui/SectionHeader';
 const inputClass =
   'w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-colors focus:border-[var(--color-primary)] focus-visible:ring-2 focus-visible:ring-[var(--color-primary-border)]';
 const inputStyle: React.CSSProperties = {
-  backgroundColor: 'var(--color-subtle-bg)',
+  backgroundColor: 'var(--color-page-bg)',
   borderColor: 'var(--color-border-subtle)',
   color: 'var(--color-heading-text)',
 };
@@ -51,7 +51,7 @@ export const Contact: React.FC = () => {
       style={{ borderColor: 'var(--color-border-subtle)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left: how to reach me */}
           <div>
             <SectionHeader
@@ -107,7 +107,15 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Right: short form */}
-          <form onSubmit={handleSubmit} className="space-y-4 lg:pt-2" aria-label="Send a message">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4 rounded-2xl border p-6 sm:p-8"
+            style={{ backgroundColor: 'var(--color-card-bg)', borderColor: 'var(--color-border-subtle)' }}
+            aria-label="Send a message"
+          >
+            <h3 className="text-lg font-semibold" style={{ color: 'var(--color-heading-text)' }}>
+              Send a message
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block">
                 <span className="mb-1.5 block text-sm" style={{ color: 'var(--color-body-text)' }}>Name</span>
