@@ -1,11 +1,7 @@
 import React from 'react';
-import { Lock } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { usePortfolioData } from '../context/PortfolioDataContext';
 
 export const Footer: React.FC = () => {
-  const { openAdmin } = usePortfolioData();
-
   return (
     <footer id="main-footer" className="bg-neutral-950 text-neutral-400 py-10 border-t border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -65,16 +61,6 @@ export const Footer: React.FC = () => {
 
         <div className="flex items-center gap-3 text-xs text-neutral-500">
           <span>&copy; {new Date().getFullYear()} Ahmed Raza</span>
-          {/* Discreet admin lock button */}
-          <button
-            type="button"
-            onClick={openAdmin}
-            className="text-neutral-700 hover:text-neutral-400 p-1 rounded transition-colors cursor-pointer"
-            title="Admin Dashboard (Ctrl+Shift+A)"
-            aria-label="Admin Portal"
-          >
-            <Lock className="w-3.5 h-3.5" />
-          </button>
         </div>
       </div>
     </footer>

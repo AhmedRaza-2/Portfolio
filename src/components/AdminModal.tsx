@@ -58,7 +58,7 @@ export const AdminModal: React.FC = () => {
       setPinError('');
       setPinInput('');
     } else {
-      setPinError('Incorrect PIN. Default is ahmed2026');
+      setPinError('Incorrect passcode.');
     }
   };
 
@@ -155,9 +155,7 @@ export const AdminModal: React.FC = () => {
                   Private
                 </span>
               </h2>
-              <p className="text-[11px] text-neutral-400">
-                Shortcut: <code className="text-emerald-400">Ctrl+Shift+A</code> or URL hash <code className="text-emerald-400">#admin</code>
-              </p>
+
             </div>
           </div>
 
@@ -202,7 +200,7 @@ export const AdminModal: React.FC = () => {
                   type="password"
                   value={pinInput}
                   onChange={(e) => setPinInput(e.target.value)}
-                  placeholder="Enter Passcode (Default: ahmed2026)"
+                  placeholder="Passcode"
                   className="w-full px-4 py-3 rounded-xl bg-neutral-950 border border-neutral-800 text-white text-sm focus:outline-none focus:border-emerald-500 text-center tracking-widest"
                   autoFocus
                 />
